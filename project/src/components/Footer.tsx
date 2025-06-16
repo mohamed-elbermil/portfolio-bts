@@ -48,7 +48,12 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center text-gray-300">
                 <Mail className="w-5 h-5 mr-3 text-blue-400" />
-                <span>melbermil@outlook.fr</span>
+                <a 
+                  href="mailto:melbermil@outlook.fr"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  melbermil@outlook.fr
+                </a>
               </div>
               <div className="flex items-center text-gray-300">
                 <MapPin className="w-5 h-5 mr-3 text-red-400" />

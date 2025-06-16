@@ -40,7 +40,12 @@ const Hero = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-5 h-5 text-purple-500" />
-                <span>melbermil@outlook.fr</span>
+                <a 
+                  href="mailto:melbermil@outlook.fr"
+                  className="hover:text-purple-600 transition-colors duration-200"
+                >
+                  melbermil@outlook.fr
+                </a>
               </div>
             </div>
 
