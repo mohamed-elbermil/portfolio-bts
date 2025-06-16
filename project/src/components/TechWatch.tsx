@@ -1,49 +1,61 @@
 import React from 'react';
-import { TrendingUp, Zap, Globe, Brain, Shield, Smartphone } from 'lucide-react';
+import { TrendingUp, Zap, Globe, Brain, Shield, Smartphone, Code, Database, Cloud, Server, ExternalLink } from 'lucide-react';
 
 const TechWatch = () => {
   const techTrends = [
     {
       icon: <Brain className="w-8 h-8" />,
       title: "Intelligence Artificielle",
-      description: "GPT-4, LLMs et automatisation des processus métier",
+      description: "Claude 3 Opus, GPT-4 Turbo et l'évolution des LLMs pour le développement",
       status: "Critique",
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
+      date: "Mars 2025",
+      link: "https://www.zdnet.com/article/anthropic-launches-claude-3-opus-its-most-advanced-ai-model-yet/"
     },
     {
-      icon: <Globe className="w-8 h-8" />,
-      title: "Web3 & Blockchain",
-      description: "DeFi, NFTs et applications décentralisées",
-      status: "Émergent",
-      color: "from-blue-500 to-cyan-500"
+      icon: <Code className="w-8 h-8" />,
+      title: "Web Development",
+      description: "React 19, Next.js 14 et l'essor des frameworks full-stack",
+      status: "Standard",
+      color: "from-blue-500 to-cyan-500",
+      date: "Mars 2025",
+      link: "https://nextjs.org/blog/next-14"
     },
     {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Edge Computing",
-      description: "Calcul en périphérie et latence ultra-faible",
-      status: "En croissance",
-      color: "from-yellow-500 to-orange-500"
+      icon: <Cloud className="w-8 h-8" />,
+      title: "Cloud Computing",
+      description: "AWS Bedrock, Azure AI et l'évolution des services cloud",
+      status: "Essentiel",
+      color: "from-yellow-500 to-orange-500",
+      date: "Mars 2025",
+      link: "https://aws.amazon.com/bedrock/"
     },
     {
       icon: <Shield className="w-8 h-8" />,
       title: "Cybersécurité",
-      description: "Zero Trust, sécurité quantique et privacy",
-      status: "Essentiel",
-      color: "from-red-500 to-rose-500"
+      description: "IA dans la sécurité, Zero Trust et protection contre les attaques quantiques",
+      status: "Critique",
+      color: "from-red-500 to-rose-500",
+      date: "Mars 2025",
+      link: "https://www.csoonline.com/article/1291510/quantum-computing-threats-to-cybersecurity.html"
     },
     {
-      icon: <Smartphone className="w-8 h-8" />,
-      title: "Progressive Web Apps",
-      description: "Applications hybrides et expérience native",
+      icon: <Database className="w-8 h-8" />,
+      title: "Bases de données",
+      description: "PostgreSQL 16, MongoDB Atlas et les bases de données vectorielles",
+      status: "En croissance",
+      color: "from-green-500 to-emerald-500",
+      date: "Mars 2025",
+      link: "https://www.postgresql.org/docs/16/release.html"
+    },
+    {
+      icon: <Server className="w-8 h-8" />,
+      title: "DevOps",
+      description: "GitHub Copilot Enterprise, Docker Desktop et l'automatisation CI/CD",
       status: "Mature",
-      color: "from-green-500 to-emerald-500"
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: "Cloud Native",
-      description: "Microservices, Kubernetes et serverless",
-      status: "Standard",
-      color: "from-indigo-500 to-purple-500"
+      color: "from-indigo-500 to-purple-500",
+      date: "Mars 2025",
+      link: "https://github.blog/2024-02-27-github-copilot-enterprise-is-now-generally-available/"
     }
   ];
 
@@ -74,9 +86,12 @@ const TechWatch = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {techTrends.map((trend, index) => (
-            <div
+            <a
               key={index}
-              className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100"
+              href={trend.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 block"
             >
               <div className={`w-16 h-16 bg-gradient-to-r ${trend.color} rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-200`}>
                 {trend.icon}
@@ -89,7 +104,12 @@ const TechWatch = () => {
                 </span>
               </div>
 
-              <p className="text-gray-600 leading-relaxed">{trend.description}</p>
+              <p className="text-gray-600 leading-relaxed mb-4">{trend.description}</p>
+              
+              <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                <span>Dernière mise à jour : {trend.date}</span>
+                <ExternalLink className="w-4 h-4 text-blue-500" />
+              </div>
 
               <div className="mt-6 pt-4 border-t border-gray-100">
                 <div className="flex items-center justify-between text-sm text-gray-500">
@@ -108,7 +128,7 @@ const TechWatch = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

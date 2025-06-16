@@ -101,7 +101,7 @@ const Projects = () => {
                     className="flex-1 flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium rounded-lg hover:shadow-lg transition-all duration-200"
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    Demo
+                    Site web
                   </a>
                   <a
                     href={project.links.github} 
