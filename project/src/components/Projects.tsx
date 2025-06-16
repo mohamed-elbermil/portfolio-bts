@@ -4,26 +4,22 @@ import { ExternalLink, Github, Calendar, Users, Star } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: "Crypto Portfolio Tracker",
-      description: "Tracker de portfolio crypto avec analyses techniques, alertes de prix et intégration multi-exchanges.",
-      image: "https://images.pexels.com/photos/8370752/pexels-photo-8370752.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Svelte", "Node.js", "Redis", "WebSocket"],
-      features: ["Analyses techniques", "Alertes de prix", "Multi-exchanges"],
-      stats: { users: "12K+", rating: 4.4 },
+      title: "Fitness-Area",
+      description: "Création d'un site web moderne pour une salle de sport, mettant en avant les équipements, les cours et les abonnements disponibles.",
+      image: "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=800",
+      technologies: ["React", "CSS"],
+      features: [
+        "Consultation des formules",
+        "Découverte des coachs",
+        "Interface responsive",
+      ],
+      stats: { users: "500+", rating: 4.8 },
       links: {
-        demo: "#",
-        github: "#"
-      },
-      category: "FinTech"
+        Site: "https://fitness-area-mohamed-e.vercel.app/",
+        github: "https://github.com/mohamed-elbermil/fitness-area"
+      }
     }
   ];
-
-  const categories = ["Tous", "Web App", "Mobile App", "SaaS", "AI Tool", "FinTech"];
-  const [selectedCategory, setSelectedCategory] = React.useState("Tous");
-
-  const filteredProjects = selectedCategory === "Tous" 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
 
   return (
     <section id="projets" className="py-20 bg-white">
@@ -38,26 +34,9 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
-                selectedCategory === category
-                  ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <div
               key={index}
               className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden border border-gray-100"
@@ -69,9 +48,6 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-gray-700">
-                  {project.category}
-                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
 
@@ -120,14 +96,16 @@ const Projects = () => {
                 {/* Links */}
                 <div className="flex space-x-3">
                   <a
-                    href={project.links.demo}
+                    href={project.links.Site}
+                    target="_blank"
                     className="flex-1 flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium rounded-lg hover:shadow-lg transition-all duration-200"
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Demo
                   </a>
                   <a
-                    href={project.links.github}
+                    href={project.links.github} 
+                    target="_blank"
                     className="flex-1 flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors duration-200"
                   >
                     <Github className="w-4 h-4 mr-2" />
