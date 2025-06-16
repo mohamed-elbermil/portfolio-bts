@@ -1,5 +1,6 @@
 import React from 'react';
 import { Download, Calendar, MapPin, Building, GraduationCap, Award } from 'lucide-react';
+import cvPdf from '../assets/documents/cv-mohamed-elbermil.pdf';
 
 const CV = () => {
   const experiences = [
@@ -36,7 +37,7 @@ const CV = () => {
       description: "SOBLIM est une agence web digital proposant différents services autour du web. Durant ce projet je me suis occupé de la création de la charte graphique, du site internet et de la gestion des réseaux sociaux.",
       achievements: [
         "Création de l'identité graphique avec la suite Adobe",
-        "Création d’un nouveau site internet (Wordpress)",
+        "Création d'un nouveau site internet (Wordpress)",
         "Rédaction des textes",
         "Gestion des formulaires",
         "Référencement (SEO)"
@@ -82,6 +83,15 @@ const CV = () => {
 
   ];
 
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = cvPdf;
+    link.download = 'CV_Mohamed_Elbermil.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="cv" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-6">
@@ -94,7 +104,10 @@ const CV = () => {
             dans l'écosystème du développement moderne.
           </p>
           
-          <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200">
+          <button 
+            onClick={handleDownload}
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200"
+          >
             <Download className="w-5 h-5 mr-2" />
             Télécharger le CV
           </button>
