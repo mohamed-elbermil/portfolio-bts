@@ -18,6 +18,22 @@ const Projects = () => {
         Site: "https://fitness-area-mohamed-e.vercel.app/",
         github: "https://github.com/mohamed-elbermil/fitness-area"
       }
+    },
+    {
+      title: "Netflix Clone",
+      description: "Réplique moderne de l'interface Netflix avec une expérience utilisateur immersive et des fonctionnalités similaires à la plateforme originale.",
+      image: "https://cdn.wccftech.com/wp-content/uploads/2021/06/Fix-Netflix-App-23.jpg",
+      technologies: ["React", "Tailwind CSS", "Firebase"],
+      features: [
+        "Authentification des utilisateurs",
+        "Catalogue de films dynamique",
+        "Interface responsive",
+        "Système de recherche"
+      ],
+      stats: { users: "1000+", rating: 4.9 },
+      links: {
+        github: "https://github.com/mohamed-elbermil/netflix-clone"
+      }
     }
   ];
 

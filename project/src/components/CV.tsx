@@ -52,7 +52,7 @@ const CV = () => {
       title: "BTS SIO - SLAM",
       institution: "Nexa Campus Lyon",
       location: "Lyon, France",
-      description: "Spécialisation en développement web et intelligence artificielle"
+      description: "Spécialisation en développement web et application"
     },
     {
       period: "2023 - 2024",
@@ -78,7 +78,7 @@ const CV = () => {
   ];
 
   const certifications = [
-    { name: "Designer UX/UI", issuer: "Web Force 3", year: "2023" },
+    { name: "Designer UX/UI RNCP 5", issuer: "Web Force 3", year: "2023" },
     { name: "Baccalauréat professionnel Menuisier Agenceur", issuer: "Ecole Lamache", year: "2021" },
 
   ];

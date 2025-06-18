@@ -41,10 +41,9 @@ const Skills = () => {
       icon: <Database className="w-6 h-6" />,
       title: "Backend",
       skills: [
-        { name: "Node.js", level: 50 },
-        { name: "Python", level: 50 },
-        { name: "PostgreSQL", level: 50 },
-        { name: "MongoDB", level: 55 }
+        { name: "Node.js", level: 40 },
+        { name: "SQL", level: 50 },
+        { name: "MongoDB", level: 30 }
       ]
     },
    
