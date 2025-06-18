@@ -22,7 +22,12 @@ const Hero = () => {
         <div className="w-full">
           <div className="flex flex-col lg:flex-row gap-12 items-start">
             {/* Left Column - Profile Info */}
-            <div className="w-full lg:w-1/2 text-center lg:text-left">
+            <div className="w-full lg:w-1/2 text-center lg:text-left profile" style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              textAlign: 'center'
+            }}>
               {/* Profile Image */}
               <div className="relative w-48 h-48 mx-auto lg:mx-0 mb-8">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-xl opacity-50 animate-pulse"></div>
@@ -34,7 +39,7 @@ const Hero = () => {
               </div>
 
               <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent leading-tight animate-fade-in">
-                Mohamed EL BERMIL
+                Mohamed <br /> EL BERMIL
               </h1>
               
               <h2 className="text-3xl md:text-4xl text-gray-700 mb-8 font-light tracking-wide">

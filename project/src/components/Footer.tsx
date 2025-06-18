@@ -96,23 +96,6 @@ const Footer = () => {
               ))}
             </div>
 
-            {/* Newsletter */}
-            <div>
-              <h5 className="font-semibold mb-3">Newsletter Tech</h5>
-              <p className="text-gray-400 text-sm mb-4">
-                Recevez les dernières tendances technologiques
-              </p>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Votre email"
-                  className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:border-blue-500 text-white placeholder-gray-400"
-                />
-                <button className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-r-lg hover:shadow-lg transition-shadow duration-200">
-                  <Mail className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
           </div>
         </div>
 

@@ -38,7 +38,7 @@ const CompanyExperience = () => {
         "Création d'images de présentation de l'application \"Bourse des Vols\" sur le Play Store",
         "Application des normes d'accessibilité numérique (RGAA)",
       ],
-      technologies: ['Vue.JS', 'SCSS', 'SASS', 'HTML', 'Github', 'Gitlab'],
+      technologies: ['Vue.JS', 'SCSS', 'CSS', 'HTML', 'Github', 'Gitlab', 'Planio'],
       color: 'from-blue-500 to-blue-600',
     },
   ];
