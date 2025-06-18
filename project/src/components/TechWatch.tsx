@@ -4,58 +4,58 @@ import { TrendingUp, Zap, Globe, Brain, Shield, Smartphone, Code, Database, Clou
 const TechWatch = () => {
   const techTrends = [
     {
-      icon: <Brain className="w-8 h-8" />,
-      title: "Intelligence Artificielle",
-      description: "Claude 3 Opus, GPT-4 Turbo et l'évolution des LLMs pour le développement",
-      status: "Critique",
+      icon: <Smartphone className="w-8 h-8" />,
+      title: "Gaming Mobile & Cloud",
+      description: "Votre téléphone est tout ce dont vous avez besoin pour jouer maintenant. Désolé les consoles !",
+      status: "Émergent",
       color: "from-purple-500 to-pink-500",
-      date: "Mars 2025",
-      link: "https://www.zdnet.com/article/anthropic-launches-claude-3-opus-its-most-advanced-ai-model-yet/"
-    },
-    {
-      icon: <Code className="w-8 h-8" />,
-      title: "Web Development",
-      description: "React 19, Next.js 14 et l'essor des frameworks full-stack",
-      status: "Standard",
-      color: "from-blue-500 to-cyan-500",
-      date: "Mars 2025",
-      link: "https://nextjs.org/blog/next-14"
+      date: "Novembre 2024",
+      link: "https://www.cnet.com/tech/gaming/features/your-phone-is-all-you-need-for-gaming-now-sorry-consoles/"
     },
     {
       icon: <Cloud className="w-8 h-8" />,
-      title: "Cloud Computing",
-      description: "AWS Bedrock, Azure AI et l'évolution des services cloud",
-      status: "Essentiel",
+      title: "Cloud Gaming",
+      description: "Xbox Cloud Gaming et PlayStation Plus Premium révolutionnent l'accès aux jeux AAA",
+      status: "En croissance",
+      color: "from-blue-500 to-cyan-500",
+      date: "Novembre 2024",
+      link: "https://www.cnet.com/tech/gaming/features/your-phone-is-all-you-need-for-gaming-now-sorry-consoles/"
+    },
+    {
+      icon: <Code className="w-8 h-8" />,
+      title: "Call of Duty Mobile",
+      description: "Call of Duty: Black Ops 6 disponible sur Xbox Cloud Gaming sans console requise",
+      status: "Critique",
       color: "from-yellow-500 to-orange-500",
-      date: "Mars 2025",
-      link: "https://aws.amazon.com/bedrock/"
+      date: "Novembre 2024",
+      link: "https://www.cnet.com/tech/gaming/features/your-phone-is-all-you-need-for-gaming-now-sorry-consoles/"
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "Cybersécurité",
-      description: "IA dans la sécurité, Zero Trust et protection contre les attaques quantiques",
-      status: "Critique",
+      title: "Résistance des Consoles",
+      description: "Microsoft et Sony maintiennent leurs consoles malgré l'essor du cloud gaming",
+      status: "Mature",
       color: "from-red-500 to-rose-500",
-      date: "Mars 2025",
-      link: "https://www.csoonline.com/article/1291510/quantum-computing-threats-to-cybersecurity.html"
+      date: "Novembre 2024",
+      link: "https://www.cnet.com/tech/gaming/features/your-phone-is-all-you-need-for-gaming-now-sorry-consoles/"
     },
     {
       icon: <Database className="w-8 h-8" />,
-      title: "Bases de données",
-      description: "PostgreSQL 16, MongoDB Atlas et les bases de données vectorielles",
-      status: "En croissance",
+      title: "Jeux AAA sur Mobile",
+      description: "Resident Evil et autres jeux AAA maintenant jouables localement sur iPhone",
+      status: "Émergent",
       color: "from-green-500 to-emerald-500",
-      date: "Mars 2025",
-      link: "https://www.postgresql.org/docs/16/release.html"
+      date: "Novembre 2024",
+      link: "https://www.cnet.com/tech/gaming/features/your-phone-is-all-you-need-for-gaming-now-sorry-consoles/"
     },
     {
       icon: <Server className="w-8 h-8" />,
-      title: "DevOps",
-      description: "GitHub Copilot Enterprise, Docker Desktop et l'automatisation CI/CD",
-      status: "Mature",
+      title: "Avenir du Gaming",
+      description: "Phil Spencer : 'Ce n'est pas à propos d'un seul appareil, mais des appareils au service des jeux'",
+      status: "En croissance",
       color: "from-indigo-500 to-purple-500",
-      date: "Mars 2025",
-      link: "https://github.blog/2024-02-27-github-copilot-enterprise-is-now-generally-available/"
+      date: "Novembre 2024",
+      link: "https://www.cnet.com/tech/gaming/features/your-phone-is-all-you-need-for-gaming-now-sorry-consoles/"
     }
   ];
 
