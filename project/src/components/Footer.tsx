@@ -3,9 +3,8 @@ import { Mail, Phone, MapPin, Linkedin, Github, Twitter, Heart } from 'lucide-re
 
 const Footer = () => {
   const socialLinks = [
-    { icon: <Linkedin className="w-5 h-5" />, href: "#", label: "LinkedIn" },
-    { icon: <Github className="w-5 h-5" />, href: "#", label: "GitHub" },
-    { icon: <Twitter className="w-5 h-5" />, href: "#", label: "Twitter" }
+    { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/in/mohamed-el-bermil-b957861bb/", label: "LinkedIn" },
+    { icon: <Github className="w-5 h-5" />, href: "https://github.com/mohamed-elbermil?tab=repositories", label: "GitHub" }
   ];
 
   const quickLinks = [
@@ -87,6 +86,8 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 transition-all duration-200 transform hover:scale-110"
                 >

@@ -111,18 +111,20 @@ const Projects = () => {
 
                 {/* Links */}
                 <div className="flex space-x-3">
-                  <a
-                    href={project.links.Site}
-                    target="_blank"
-                    className="flex-1 flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium rounded-lg hover:shadow-lg transition-all duration-200"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Site web
-                  </a>
+                  {project.links.Site && (
+                    <a
+                      href={project.links.Site}
+                      target="_blank"
+                      className="flex-1 flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium rounded-lg hover:shadow-lg transition-all duration-200"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Site web
+                    </a>
+                  )}
                   <a
                     href={project.links.github} 
                     target="_blank"
-                    className="flex-1 flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                    className={`flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors duration-200 ${project.links.Site ? 'flex-1' : 'w-full'}`}
                   >
                     <Github className="w-4 h-4 mr-2" />
                     Code
