@@ -133,27 +133,6 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Stats Section */}
-        <div className="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
-              <div className="text-gray-600">Projets réalisés</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-purple-600 mb-2">200K+</div>
-              <div className="text-gray-600">Utilisateurs actifs</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-green-600 mb-2">4.7/5</div>
-              <div className="text-gray-600">Note moyenne</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-orange-600 mb-2">98%</div>
-              <div className="text-gray-600">Satisfaction client</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

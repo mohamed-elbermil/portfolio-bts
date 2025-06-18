@@ -13,11 +13,11 @@ function App() {
     <div className="min-h-screen">
       <Header />
       <Hero />
-      <TechWatch />
       <Skills />
       <CV />
       <CompanyExperience/>
       <Projects />
+      <TechWatch />
       <Footer />
     </div>
   );
