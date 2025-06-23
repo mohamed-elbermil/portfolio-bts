@@ -11,6 +11,12 @@ import {
 } from 'lucide-react';
 import PGW from '../assets/images/PGW.png';
 
+const BehanceIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="currentColor" width={24} height={24} {...props}>
+    <path d="M8.6 15.1c.6 0 1.1-.1 1.4-.3.3-.2.5-.6.5-1.1 0-.5-.2-.8-.5-1-.3-.2-.8-.3-1.4-.3H5.7v2.7h2.9zm.1 3.2c.7 0 1.2-.1 1.5-.4.3-.2.5-.6.5-1.2 0-.5-.2-.9-.5-1.1-.3-.2-.8-.3-1.5-.3H5.7v3h3zm6.2-2.2c-.3.2-.5.6-.5 1.1 0 .5.2.8.5 1 .3.2.8.3 1.4.3.6 0 1.1-.1 1.4-.3.3-.2.5-.6.5-1.1 0-.5-.2-.8-.5-1-.3-.2-.8-.3-1.4-.3-.6 0-1.1.1-1.4.3zm-6.2-5.1c1.2 0 2.1.2 2.7.7.6.5.9 1.2.9 2.2 0 .6-.2 1.1-.5 1.5-.3.4-.8.7-1.4.8v.1c.8.1 1.4.4 1.7.8.3.4.5.9.5 1.6 0 1.1-.4 1.9-1.1 2.4-.7.5-1.7.7-3 .7H3v-8.1h5.7zm7.5 2.2c.7-.6 1.7-.9 3-.9 1.1 0 2 .3 2.6.8.6.5.9 1.2 1 2.1h-2.1c-.1-.3-.2-.5-.4-.7-.2-.2-.5-.3-.9-.3-.5 0-.8.1-1 .3-.2.2-.3.5-.3.8v.2h4.8v.7c0 1.1-.3 2-1 2.6-.7.6-1.7.9-3 .9-1.2 0-2.1-.3-2.7-.8-.6-.5-.9-1.2-.9-2.2 0-1.1.3-1.9 1-2.5zm7.7 2.5c.2-.7.6-1.3 1.2-1.7.6-.4 1.4-.6 2.4-.6.9 0 1.7.2 2.2.6.5.4.8 1 .9 1.7h-1.7c-.1-.2-.2-.4-.4-.5-.2-.1-.5-.2-.9-.2-.4 0-.7.1-.9.2-.2.1-.3.3-.3.5 0 .2.1.3.3.4.2.1.7.2 1.5.3 1.2.2 2 .4 2.4.7.4.3.6.7.6 1.3 0 .7-.3 1.2-.9 1.6-.6.4-1.4.6-2.5.6-1 0-1.8-.2-2.4-.6-.6-.4-.9-1-.9-1.7h1.8c.1.5.6.7 1.5.7.4 0 .7-.1.9-.2.2-.1.3-.2.3-.4 0-.2-.1-.3-.3-.4-.2-.1-.7-.2-1.5-.3-1.2-.2-2-.4-2.4-.7-.4-.3-.6-.7-.6-1.3 0-.7.3-1.2.9-1.6zm-2.2-4.2h5.2v1.2h-5.2v-1.2z" />
+  </svg>
+);
+
 const CompanyExperience = () => {
   const companies = [
     {
@@ -26,7 +32,7 @@ const CompanyExperience = () => {
       location: '73 rue Francis de Pressensé, 69100 Villeurbanne (Lyon)',
       position: 'Intégrateur web',
       missions: [
-        "Depuis 2003, Penguin World accompagne les professionnels du tourisme et des loisirs dans le développement de leurs ventes sur Internet. L’entreprise propose des logiciels de réservation en ligne multi‑tour‑opérateurs et multi‑sources, permettant de distribuer et de gérer une offre complète de voyages sur l’ensemble des canaux de distribution.",
+        "Depuis 2003, Penguin World accompagne les professionnels du tourisme et des loisirs dans le développement de leurs ventes sur Internet. L'entreprise propose des logiciels de réservation en ligne multi‑tour‑opérateurs et multi‑sources, permettant de distribuer et de gérer une offre complète de voyages sur l'ensemble des canaux de distribution.",
       ],
       achievements: [
         'Création de marque blanche',
@@ -85,6 +91,15 @@ const CompanyExperience = () => {
                         <h3 className="text-2xl font-bold text-gray-800">{company.name}</h3>
                         <p className="text-blue-600 font-semibold">{company.period}</p>
                       </div>
+                      <a
+                        href="https://www.behance.net/mohamedelbermil2"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Behance"
+                        className="ml-4 p-2 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors"
+                      >
+                        <BehanceIcon className="w-7 h-7 text-blue-600" />
+                      </a>
                     </div>
 
                     {/* Company Info Cards */}
