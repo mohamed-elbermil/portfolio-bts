@@ -211,7 +211,7 @@ const CompanyExperience = () => {
               <div className="text-gray-600">Entreprise</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-purple-600 mb-2">375+</div>
+              <div className="text-3xl font-bold text-purple-600 mb-2">100+</div>
               <div className="text-gray-600">Employés encadrés</div>
             </div>
             <div>
