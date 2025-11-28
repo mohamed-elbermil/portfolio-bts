@@ -1,4 +1,7 @@
 import React from 'react';
+import moovyImg from '../assets/images/moovy.png';
+import fitnessAreaImg from '../assets/images/fitness-area.png';
+import vintedImg from '../assets/images/vinted.png';
 import { ExternalLink, Github, Users, Star } from 'lucide-react';
 
 const Projects = () => {
@@ -6,7 +9,7 @@ const Projects = () => {
     {
       title: "Fitness-Area",
       description: "Création d'un site web moderne pour une salle de sport, mettant en avant les équipements, les cours et les abonnements disponibles.",
-      image: "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: fitnessAreaImg,
       technologies: ["React", "CSS"],
       competences: [
         "Bloc 2 : Conception et développement d'une interface utilisateur",
@@ -26,10 +29,10 @@ const Projects = () => {
       }
     },
     {
-      title: "Netflix Clone",
-      description: "Réplique moderne de l'interface Netflix avec une expérience utilisateur immersive et des fonctionnalités similaires à la plateforme originale.",
-      image: "https://cdn.wccftech.com/wp-content/uploads/2021/06/Fix-Netflix-App-23.jpg",
-      technologies: ["React", "CSS", "SQL"],
+      title: "Moovy",
+      description: "Moovy est une plateforme de streaming fictive qui permet de découvrir et regarder vos films et séries préférés. La plateforme utilise l’API TMDB.",
+      image: moovyImg,
+      technologies: ["React","NextJS", "CSS", "JS"],
       competences: [
         "Bloc 2 : Définir et implémenter des fonctionnalités utilisateurs",
         "Bloc SLAM : Consommer et structurer des données côté client",
@@ -42,7 +45,27 @@ const Projects = () => {
       ],
       stats: { users: "1000+", rating: 4.9 },
       links: {
-        github: "https://github.com/mohamed-elbermil/netflix-clone"
+        github: "https://github.com/mohamed-elbermil/moovy"
+      }
+    },
+    {
+      title: "Vinted Générateur",
+      description: "Il s'agit d'un projet personnel visant à automatiser la rédaction de mes descriptions de vêtements sur Vinted.",
+      image: vintedImg,
+      technologies: ["VueJS", "CSS", "JS"],
+      competences: [
+        "Bloc 2 : Conception et développement d'une interface utilisateur",
+        "Bloc 4 : Gestion de projet et versionning avec Git"
+      ],
+      features: [
+        "Génération de descriptions personnalisées",
+        "Interface utilisateur intuitive",
+      ],
+      stats: { users: "1000+", rating: 4.9 },
+      links: {
+        github: "https://github.com/mohamed-elbermil/DressCode",
+        Site: "https://dress-code-beta.vercel.app/",
+
       }
     }
   ];
