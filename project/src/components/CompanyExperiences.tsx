@@ -3,7 +3,6 @@ import {
   Building,
   Users,
   MapPin,
-  Calendar,
   Target,
   Briefcase,
   TrendingUp,

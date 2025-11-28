@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronDown, MapPin, Mail, Phone, Github, Linkedin } from 'lucide-react';
+import { ChevronDown, MapPin, Mail, Github, Linkedin } from 'lucide-react';
 
 const BehanceIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width={24} height={24} {...props}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Github, Calendar, Users, Star } from 'lucide-react';
+import { ExternalLink, Github, Users, Star } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -8,6 +8,12 @@ const Projects = () => {
       description: "Création d'un site web moderne pour une salle de sport, mettant en avant les équipements, les cours et les abonnements disponibles.",
       image: "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["React", "CSS"],
+      competences: [
+        "Bloc 2 : Conception et développement d'une interface utilisateur",
+        "Bloc SLAM : Développer des composants front-end réutilisables",
+        "Bloc 4 : Gestion de projet et versionning avec Git",
+        "Bloc 3 : Intégration de services et déploiement (Vercel)"
+      ],
       features: [
         "Consultation des formules",
         "Découverte des coachs",
@@ -24,6 +30,12 @@ const Projects = () => {
       description: "Réplique moderne de l'interface Netflix avec une expérience utilisateur immersive et des fonctionnalités similaires à la plateforme originale.",
       image: "https://cdn.wccftech.com/wp-content/uploads/2021/06/Fix-Netflix-App-23.jpg",
       technologies: ["React", "CSS", "SQL"],
+      competences: [
+        "Bloc 2 : Définir et implémenter des fonctionnalités utilisateurs",
+        "Bloc SLAM : Consommer et structurer des données côté client",
+        "Bloc 3 : Modéliser et interroger une base de données SQL",
+        "Bloc 4 : Collaboration, documentation et qualité du code"
+      ],
       features: [
         "Catalogue de films dynamique",
         "Interface responsive",
@@ -93,6 +105,20 @@ const Projects = () => {
                       </li>
                     ))}
                   </ul>
+                </div>
+
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-gray-800 mb-2">Compétences mobilisées :</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.competences?.map((comp, idx) => (
+                      <span
+                        key={idx}
+                        className="px-2.5 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-full border border-purple-100"
+                      >
+                        {comp}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Stats */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Github, Twitter, Heart } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
@@ -23,6 +23,17 @@ const Footer = () => {
   };
 
   return (
+    <>
+  <style>
+    {`
+      footer {
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+      }
+    `}
+  </style>
+    
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -122,7 +133,10 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
+
+
 
 export default Footer;

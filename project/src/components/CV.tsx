@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, Calendar, MapPin, Building, GraduationCap, Award } from 'lucide-react';
+import { Download, MapPin, Building, GraduationCap, Award } from 'lucide-react';
 import cvPdf from '../assets/documents/cv-mohamed-elbermil.pdf';
 
 const CV = () => {

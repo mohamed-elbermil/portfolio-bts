@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Code, Database, Globe, Palette, Settings, Smartphone } from 'lucide-react';
+import { Code, Database, Palette, Settings } from 'lucide-react';
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
