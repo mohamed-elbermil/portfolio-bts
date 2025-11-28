@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import profile from "../assets/images/profile.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,9 +38,9 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center overflow-hidden">
-              <img 
-                src="https://media.licdn.com/dms/image/v2/D4D35AQEJ26CEq8e3hg/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1737361151334?e=1750798800&v=beta&t=wQDRvrlCNWwoUFZIF_LS_z82wAiXgZPt_F2S2dT1ij4" 
-                alt="Mohamed EL BERMIL" 
+              <img
+                src={profile}
+                alt="Mohamed EL BERMIL"
                 className="w-full h-full object-cover"
               />
             </div>

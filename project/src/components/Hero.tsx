@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChevronDown, MapPin, Mail, Github, Linkedin } from 'lucide-react';
+import profile from "../assets/images/profile.jpg";
 
 const BehanceIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width={24} height={24} {...props}>
@@ -37,11 +38,11 @@ const Hero = () => {
               {/* Profile Image */}
               <div className="relative w-48 h-48 mx-auto lg:mx-0 mb-8">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-xl opacity-50 animate-pulse"></div>
-                <img 
-                  src="https://media.licdn.com/dms/image/v2/D4D35AQEJ26CEq8e3hg/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1737361151334?e=1750798800&v=beta&t=wQDRvrlCNWwoUFZIF_LS_z82wAiXgZPt_F2S2dT1ij4" 
-                  alt="Mohamed EL BERMIL" 
-                  className="w-full h-full object-cover rounded-full border-4 border-white shadow-2xl transform hover:scale-105 transition-transform duration-300 animate-float"
-                />
+                    <img
+                      src={profile}
+                      alt="Mohamed EL BERMIL"
+                      className="w-full h-full object-cover rounded-full border-4 border-white shadow-2xl transform hover:scale-105 transition-transform duration-300 animate-float"
+                    />
               </div>
 
               <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent leading-tight animate-fade-in">
