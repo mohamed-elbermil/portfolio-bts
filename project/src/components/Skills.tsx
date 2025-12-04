@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Code, Database, Palette, Settings } from 'lucide-react';
 
 const Skills = () => {
@@ -45,7 +45,8 @@ const Skills = () => {
       skills: [
         { name: "Node.js", level: 40 },
         { name: "SQL", level: 50 },
-        { name: "MongoDB", level: 30 }
+        { name: "MongoDB", level: 30 },
+        { name: "Python", level: 30 },
       ]
     },
    
@@ -71,28 +72,48 @@ const Skills = () => {
         { name: "VS Code", level: 95 },
         { name: "Slack", level: 90 },
         { name: "Notion", level: 90 },
-        { name: "Framer", level: 90 }
+        { name: "GSAP", level: 90 },
       ]
     }
   ];
 
-  const SkillBar = ({ skill, delay }: { skill: { name: string; level: number }; delay: number }) => (
-    <div className="mb-4">
-      <div className="flex justify-between items-center mb-2">
-        <span className="text-sm font-medium text-gray-700">{skill.name}</span>
-        <span className="text-sm text-gray-500">{skill.level}%</span>
+  const getLevelColors = (level: number) => {
+    if (level >= 90) return "bg-blue-50 border-blue-100";
+    if (level >= 70) return "bg-purple-50 border-purple-100";
+    if (level >= 50) return "bg-amber-50 border-amber-100";
+    return "bg-slate-50 border-slate-100";
+  };
+
+  const getAccentGradient = (level: number) => {
+    if (level >= 90) return "from-blue-500 via-indigo-500 to-purple-500";
+    if (level >= 70) return "from-purple-500 via-violet-500 to-pink-500";
+    if (level >= 50) return "from-amber-500 via-orange-500 to-rose-500";
+    return "from-slate-500 via-slate-400 to-slate-300";
+  };
+
+  const SkillBar = ({ skill, delay }: { skill: { name: string; level: number }; delay: number }) => {
+    const levelColors = getLevelColors(skill.level);
+    const accentGradient = getAccentGradient(skill.level);
+
+    return (
+      <div
+        className={`mb-3 transform transition duration-500 ease-out ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+        }`}
+        style={{ transitionDelay: `${delay}ms` }}
+      >
+        <div className={`relative flex items-center justify-between overflow-hidden rounded-2xl border px-4 py-4 shadow-sm hover:shadow-md ${levelColors}`}>
+          <span className={`pointer-events-none absolute inset-x-4 top-0 h-1 rounded-full bg-gradient-to-r ${accentGradient}`} />
+          <div className="relative">
+            <p className="text-sm font-semibold text-gray-900">{skill.name}</p>
+          </div>
+          <div className="text-right text-xs uppercase tracking-widest text-gray-500">
+            
+          </div>
+        </div>
       </div>
-      <div className="w-full bg-gray-200 rounded-full h-2">
-        <div
-          className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
-          style={{
-            width: isVisible ? `${skill.level}%` : '0%',
-            transitionDelay: `${delay}ms`
-          }}
-        ></div>
-      </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <section id="competences" ref={sectionRef} className="py-20 bg-white">
