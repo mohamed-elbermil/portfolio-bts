@@ -1,0 +1,672 @@
+<!doctype html>
+
+<html lang="fr">
+
+<head>
+
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Présentation — Penguin World</title>
+
+  <meta name="description" content="Présentation de l'entreprise, services, équipe, réalisations et technologies."/>
+
+  <style>
+    :root {
+      --bg: #f6f8ff;
+      --bg-2: #eef2ff;
+      --card: #ffffff;
+      --muted: #475569;
+      --strong: #0f172a;
+      --accent-1: #2563eb;
+      --accent-2: #7c3aed;
+      --accent-3: #22d3ee;
+      --glass: rgba(255, 255, 255, 0.75);
+      --radius: 18px;
+      --max-width: 1100px;
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      color: var(--strong);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+      padding: 28px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.92));
+      border-radius: 22px;
+      padding: 32px;
+      box-shadow: 0 20px 60px rgba(79, 70, 229, 0.18);
+      border: 1px solid rgba(15, 23, 42, 0.05);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      margin-bottom: 24px;
+    }
+
+    .topbar {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      padding: 12px 16px;
+      border: 1px solid rgba(15, 23, 42, 0.05);
+      box-shadow: 0 10px 35px rgba(15, 23, 42, 0.12);
+      backdrop-filter: blur(12px);
+    }
+
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      display: inline-grid;
+      place-items: center;
+      font-weight: 800;
+      color: #ffffff;
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.22);
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 999px;
+      transition: all 180ms ease;
+      border: 1px solid transparent;
+    }
+
+    nav a:hover {
+      color: var(--accent-1);
+      border-color: rgba(37, 99, 235, 0.12);
+      background: rgba(37, 99, 235, 0.06);
+    }
+
+    nav a.active {
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      border-color: transparent;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+    }
+
+    @media (max-width: 720px) {
+      .topbar { flex-direction: column; align-items: flex-start; }
+      nav { flex-wrap: wrap; }
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 22px;
+      align-items: start;
+    }
+
+    @media (max-width: 980px) {
+      main { grid-template-columns: 1fr; }
+      nav { display: none; }
+    }
+
+    /* Card */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #eef2ff, #e0f2fe);
+      border: 1px solid rgba(37, 99, 235, 0.12);
+    }
+    .hero-left { flex: 1; }
+    .title {
+      font-size: 1.8rem;
+      margin: 0 0 6px 0;
+      color: var(--strong);
+    }
+    .subtitle { color: var(--muted); margin: 0 0 12px 0; }
+
+    .meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .pill {
+      background: rgba(37, 99, 235, 0.08);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: var(--accent-1);
+      border: 1px solid rgba(37, 99, 235, 0.1);
+      font-weight: 600;
+    }
+
+    /* Sections */
+    section { margin-bottom: 18px; opacity: 0; transform: translateY(10px); transition: all 600ms cubic-bezier(.2,.9,.2,1); border-radius: 12px; }
+    section.visible { opacity: 1; transform: none; }
+
+    h2 { margin: 0 0 10px 0; font-size: 1.1rem; color: var(--strong); }
+    p { margin: 0 0 8px 0; color: var(--muted); }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    ul { margin: 0; padding-left: 1.1rem; color: var(--muted); }
+
+    /* sidebar */
+    aside .card { position: sticky; top: 24px; }
+    .team-list { display: flex; flex-direction: column; gap: 8px; }
+    .member {
+      display: flex; gap: 10px; align-items: center;
+      background: linear-gradient(180deg, rgba(37, 99, 235, 0.05), rgba(124, 58, 237, 0.06));
+      padding: 10px; border-radius: 12px;
+      border: 1px solid rgba(15, 23, 42, 0.05);
+    }
+    .avatar {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      display: inline-grid; place-items: center; font-weight: 700; color: #fff;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.2);
+    }
+    .role { font-size: 0.9rem; color: var(--muted); }
+
+    /* footer */
+    footer { margin-top: 18px; text-align: center; color: var(--muted); font-size: 0.9rem; }
+
+    /* skip link */
+    .skip {
+      position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+    }
+    .skip:focus {
+      left: 16px; top: 16px; width: auto; height: auto; padding: 8px 12px; background: rgba(37, 99, 235, 0.12); border-radius: 10px; z-index: 1000; color: var(--strong);
+    }
+
+    /* small utilities */
+    .muted { color: var(--muted); }
+    .small { font-size: 0.92rem; }
+
+    /* code style */
+    pre.code {
+      background: #0f172a;
+      padding: 12px;
+      border-radius: 10px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.9rem;
+      color: #bfdbfe;
+      overflow: auto;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <a href="#main" class="skip">Aller au contenu</a>
+
+
+
+  <div class="container" role="main" id="main">
+
+    <header>
+      <div class="topbar">
+        <a class="brand" href="/" aria-label="Accueil — Portfolio">
+          <div class="logo" aria-hidden="true">PW</div>
+          <div>
+            <div style="font-weight:700">Penguin World</div>
+            <div class="muted small">Présentation de l'entreprise — Pitch 10-15 min</div>
+          </div>
+        </a>
+        <nav aria-label="Navigation principale">
+          <a href="/index.html" aria-label="Retour au portfolio">Accueil</a>
+          <a href="#presentation">Présentation</a>
+          <a href="#services">Services</a>
+          <a href="#team">Équipe</a>
+          <a href="#realisations">Réalisations</a>
+          <a href="#tech">Technos</a>
+          <a href="#main" class="active" aria-current="page">Entreprise</a>
+        </nav>
+      </div>
+    </header>
+
+
+
+    <main>
+
+      <div>
+
+        <div class="hero card" aria-hidden="false">
+
+          <div class="hero-left">
+
+            <h1 class="title">Présentation de l'entreprise</h1>
+
+            <p class="subtitle">Présentation synthétique des activités, de l'équipe, des outils et des réalisations — adaptée pour un oral de 10–15 min.</p>
+
+            <div class="meta">
+
+              <span class="pill">Marques blanches</span>
+
+              <span class="pill">Design system</span>
+
+              <span class="pill">RGAA / Accessibilité</span>
+
+            </div>
+
+          </div>
+
+          <div style="width:220px">
+
+            <!-- image placeholder -->
+
+            <div style="width:220px;height:140px;border-radius:12px;background:linear-gradient(135deg,#0ea5a3,#60a5fa);display:flex;align-items:center;justify-content:center;color:#05232a;font-weight:700">
+
+              Slide / Visuel
+
+            </div>
+
+            <p class="muted small" style="margin-top:8px">Visuel : Play Store, templates email, design system</p>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Sections from the PDF -->
+
+        <section id="presentation" class="card" aria-labelledby="h-presentation">
+
+          <h2 id="h-presentation">Présentation rapide</h2>
+
+          <p>Penguin World regroupe plusieurs sociétés et services dédiés au voyage et à la vente de marques blanches (Resaneo, Quartier libre, Speed Media, Promovols, Bourse des vols, Bourse des voyages).</p>
+
+          <ul>
+
+            <li>Mission : rapprocher les peuples en facilitant l'accès aux voyages.</li>
+
+            <li>Valeurs : expertise, accessibilité, modularité.</li>
+
+          </ul>
+
+        </section>
+
+
+
+        <section id="services" class="card" aria-labelledby="h-services">
+
+          <h2 id="h-services">Nos services</h2>
+
+          <div class="grid-2">
+
+            <div>
+
+              <h3 style="margin:0 0 6px 0">Vente de marques blanches</h3>
+
+              <p class="muted small">Produit/service réutilisable par d’autres marques, intégration du branding client, personnalisation des parcours.</p>
+
+            </div>
+
+            <div>
+
+              <h3 style="margin:0 0 6px 0">Vente de voyages</h3>
+
+              <p class="muted small">Comparateur, réservation, moteur de paiement, support SAV.</p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+
+        <section id="team" class="card" aria-labelledby="h-team">
+
+          <h2 id="h-team">L'équipe (extrait)</h2>
+
+          <p class="muted small">Pôle informatique : développeurs, lead dev, product owner, designer, QA, manager.</p>
+
+          <ul>
+
+            <li>Thomas — Tuteur / Développeur Web</li>
+
+            <li>Julie — Designer web / Intégratrice</li>
+
+            <li>Nabil — Lead Développeur</li>
+
+            <li>Mickael — Développeur Web</li>
+
+          </ul>
+
+        </section>
+
+
+
+        <section id="premiers-jours" class="card" aria-labelledby="h-premiers">
+
+          <h2 id="h-premiers">Les premiers jours</h2>
+
+          <p class="muted small">Installation des outils, configuration du poste (VS Code, Chocolatey...), apprentissage de l'arborescence, formation GitLab et premières tâches (corrections marques blanches).</p>
+
+          <pre class="code" aria-hidden="true">
+
+git pull
+
+git add .
+
+git commit -m "update"
+
+git push
+
+git checkout branch
+
+git stash
+
+          </pre>
+
+        </section>
+
+
+
+        <section id="realisations" class="card" aria-labelledby="h-realisations">
+
+          <h2 id="h-realisations">Présentations de mes réalisations</h2>
+
+          <ul>
+
+            <li>Correction responsive d'une page thématique (Vue.js + SCSS).</li>
+
+            <li>MAJ logos / ajustements UI (boutons arrondis, couleurs).</li>
+
+            <li>Correction de bug : limite de passagers (max 9).</li>
+
+            <li>Création d'un design system modulaire (Figma) et templates Beefree pour emailing.</li>
+
+            <li>Respect du RGAA : focus visible, aria-labels, role sur bannières, images décoratives aria-hidden.</li>
+
+          </ul>
+
+        </section>
+
+
+
+        <section id="tech" class="card" aria-labelledby="h-tech">
+
+          <h2 id="h-tech">Technologies & outils</h2>
+
+          <div class="grid-2">
+
+            <div>
+
+              <h3 style="margin:0 0 6px 0">Tech</h3>
+
+              <ul>
+
+                <li>VueJS</li>
+
+                <li>SCSS</li>
+
+                <li>NodeJS</li>
+
+                <li>XML (templates Beefree)</li>
+
+              </ul>
+
+            </div>
+
+            <div>
+
+              <h3 style="margin:0 0 6px 0">Outils</h3>
+
+              <ul>
+
+                <li>Visual Studio Code</li>
+
+                <li>GitLab / Git</li>
+
+                <li>Chocolatey</li>
+
+                <li>Discord, Thunderbird, Jitsi, Planio</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+
+        <section id="organisation" class="card" aria-labelledby="h-orga">
+
+          <h2 id="h-orga">Organisation & process</h2>
+
+          <p class="muted small">Statuts : À traiter → En cours → Validation technique → Validation fonctionnelle → Déploiement prod → Livré.</p>
+
+          <p class="muted small">Rythmes : Rétro, journées internes, livraisons bi-hebdo / mensuelles et suivi du temps par ticket (GitLab).</p>
+
+        </section>
+
+
+
+        <section id="competences" class="card" aria-labelledby="h-competences">
+
+          <h2 id="h-competences">Compétences acquises</h2>
+
+          <ul>
+
+            <li>Intégration web responsive / mobile-first</li>
+
+            <li>Design system et composants réutilisables</li>
+
+            <li>Accessibilité (RGAA)</li>
+
+            <li>Résolution de bugs et workflows Git</li>
+
+          </ul>
+
+        </section>
+
+
+
+        <footer>
+
+          <div class="muted small">Merci pour votre écoute — Présentation prête pour un oral de 10–15 minutes.</div>
+
+        </footer>
+
+      </div>
+
+
+
+      <!-- Sidebar -->
+
+      <aside>
+
+        <div class="card" aria-labelledby="h-sidebar">
+
+          <h3 id="h-sidebar" style="margin-top:0">Rappel rapide</h3>
+
+          <p class="muted small">Points clés à mentionner pendant l'oral :</p>
+
+          <ul>
+
+            <li>Objectif du groupe</li>
+
+            <li>Exemples concrets de missions</li>
+
+            <li>Impact (accessibilité, design system)</li>
+
+            <li>Technos / outils</li>
+
+          </ul>
+
+
+
+          <hr style="border:none;height:1px;background:rgba(255,255,255,0.02);margin:12px 0">
+
+
+
+          <div style="margin-bottom:8px" class="muted small">Équipe — Extrait</div>
+
+          <div class="team-list">
+
+            <div class="member">
+
+              <div class="avatar" aria-hidden="true">T</div>
+
+              <div>
+
+                <div style="font-weight:600">Thomas</div>
+
+                <div class="role">Tuteur — Dev Web</div>
+
+              </div>
+
+            </div>
+
+            <div class="member">
+
+              <div class="avatar" aria-hidden="true">J</div>
+
+              <div>
+
+                <div style="font-weight:600">Julie</div>
+
+                <div class="role">Designer / Intégratrice</div>
+
+              </div>
+
+            </div>
+
+            <div class="member">
+
+              <div class="avatar" aria-hidden="true">N</div>
+
+              <div>
+
+                <div style="font-weight:600">Nabil</div>
+
+                <div class="role">Lead Dev</div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+        </div>
+
+      </aside>
+
+    </main>
+
+
+
+  </div>
+
+
+
+  <script>
+
+    // IntersectionObserver pour faire apparaître les sections une seule fois.
+
+    (function(){
+
+      const observer = new IntersectionObserver((entries, obs) => {
+
+        entries.forEach(e => {
+
+          if(e.isIntersecting){
+
+            e.target.classList.add('visible');
+
+            obs.unobserve(e.target); // n'apparaît qu'une seule fois
+
+          }
+
+        });
+
+      }, {threshold: 0.12});
+
+
+
+      document.querySelectorAll('section').forEach(s => observer.observe(s));
+
+
+
+      // Smooth scroll for nav links
+
+      document.querySelectorAll('nav a').forEach(a => {
+
+        a.addEventListener('click', (ev) => {
+
+          ev.preventDefault();
+
+          const id = a.getAttribute('href').slice(1);
+
+          const el = document.getElementById(id);
+
+          if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+
+        });
+
+      });
+
+    })();
+
+  </script>
+
+</body>
+
+</html>
+

@@ -27,7 +27,8 @@ const Header = () => {
     { id: 'veille', label: 'Veille Tech' },
     { id: 'competences', label: 'Compétences' },
     { id: 'cv', label: 'CV' },
-    { id: 'projets', label: 'Projets' }
+    { id: 'projets', label: 'Projets' },
+    { href: '/entreprise.html', label: 'Entreprise' }
   ];
 
   return (
@@ -51,15 +52,25 @@ const Header = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {menuItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-              >
-                {item.label}
-              </button>
-            ))}
+            {menuItems.map((item) =>
+              item.href ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                >
+                  {item.label}
+                </button>
+              )
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -75,15 +86,26 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg border-t">
             <div className="py-4">
-              {menuItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left px-6 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
-                >
-                  {item.label}
-                </button>
-              ))}
+              {menuItems.map((item) =>
+                item.href ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block w-full text-left px-6 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="block w-full text-left px-6 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+                  >
+                    {item.label}
+                  </button>
+                )
+              )}
             </div>
           </div>
         )}
