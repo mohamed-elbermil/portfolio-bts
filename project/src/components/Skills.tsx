@@ -1,5 +1,5 @@
-import { useEffect, useState, useRef } from 'react';
-import { Code, Database, Palette, Settings } from 'lucide-react';
+import { useEffect, useState, useRef } from "react";
+import { Code, Database, Palette, Settings } from "lucide-react";
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,6 +29,7 @@ const Skills = () => {
       skills: [
         { name: "HTML", level: 95 },
         { name: "CSS", level: 95 },
+        { name: "SCSS", level: 95 },
         { name: "JS", level: 60 },
         { name: "php", level: 50 },
         { name: "Bootstrap", level: 70 },
@@ -36,8 +37,8 @@ const Skills = () => {
         { name: "Vue.js", level: 60 },
         { name: "Tailwind CSS", level: 95 },
         { name: "Wordpress", level: 90 },
-        { name: "Webflow", level: 90 }
-      ]
+        { name: "Webflow", level: 90 },
+      ],
     },
     {
       icon: <Database className="w-6 h-6" />,
@@ -47,9 +48,9 @@ const Skills = () => {
         { name: "SQL", level: 50 },
         { name: "MongoDB", level: 30 },
         { name: "Python", level: 30 },
-      ]
+      ],
     },
-   
+
     {
       icon: <Palette className="w-6 h-6" />,
       title: "Design",
@@ -60,8 +61,8 @@ const Skills = () => {
         { name: "After Effect", level: 70 },
         { name: "Canva", level: 70 },
         { name: "Figma", level: 95 },
-        { name: "Prototyping", level: 95 }
-      ]
+        { name: "Prototyping", level: 95 },
+      ],
     },
     {
       icon: <Settings className="w-6 h-6" />,
@@ -73,8 +74,9 @@ const Skills = () => {
         { name: "Slack", level: 90 },
         { name: "Notion", level: 90 },
         { name: "GSAP", level: 90 },
-      ]
-    }
+        { name: "Miro", level: 90 },
+      ],
+    },
   ];
 
   const getLevelColors = (level: number) => {
@@ -91,7 +93,13 @@ const Skills = () => {
     return "from-slate-500 via-slate-400 to-slate-300";
   };
 
-  const SkillBar = ({ skill, delay }: { skill: { name: string; level: number }; delay: number }) => {
+  const SkillBar = ({
+    skill,
+    delay,
+  }: {
+    skill: { name: string; level: number };
+    delay: number;
+  }) => {
     const levelColors = getLevelColors(skill.level);
     const accentGradient = getAccentGradient(skill.level);
 
@@ -102,14 +110,16 @@ const Skills = () => {
         }`}
         style={{ transitionDelay: `${delay}ms` }}
       >
-        <div className={`relative flex items-center justify-between overflow-hidden rounded-2xl border px-4 py-4 shadow-sm hover:shadow-md ${levelColors}`}>
-          <span className={`pointer-events-none absolute inset-x-4 top-0 h-1 rounded-full bg-gradient-to-r ${accentGradient}`} />
+        <div
+          className={`relative flex items-center justify-between overflow-hidden rounded-2xl border px-4 py-4 shadow-sm hover:shadow-md ${levelColors}`}
+        >
+          <span
+            className={`pointer-events-none absolute inset-x-4 top-0 h-1 rounded-full bg-gradient-to-r ${accentGradient}`}
+          />
           <div className="relative">
             <p className="text-sm font-semibold text-gray-900">{skill.name}</p>
           </div>
-          <div className="text-right text-xs uppercase tracking-widest text-gray-500">
-            
-          </div>
+          <div className="text-right text-xs uppercase tracking-widest text-gray-500"></div>
         </div>
       </div>
     );
@@ -123,8 +133,8 @@ const Skills = () => {
             Compétences Techniques
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Une expertise polyvalente couvrant tout l'écosystème de développement moderne,
-            de la conception à la mise en production.
+            Une expertise polyvalente couvrant tout l'écosystème de
+            développement moderne, de la conception à la mise en production.
           </p>
         </div>
 
@@ -138,7 +148,9 @@ const Skills = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white mr-4">
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800">{category.title}</h3>
+                <h3 className="text-xl font-bold text-gray-800">
+                  {category.title}
+                </h3>
               </div>
 
               <div>
