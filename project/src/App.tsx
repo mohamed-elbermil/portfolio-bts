@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import TechWatchArchive from './pages/TechWatchArchive';
 import BentoGrid from './components/BentoGrid';
 import CaseStudies from './components/CaseStudies';
+import EnterpriseDetail from './pages/EnterpriseDetail';
 
 function App() {
   const [route, setRoute] = useState<string>(window.location.hash || '#home');
@@ -23,6 +24,16 @@ function App() {
       <div className="min-h-screen bg-[#050505] text-gray-100">
         <Header />
         <TechWatchArchive />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (route === '#entreprises-detail') {
+    return (
+      <div className="min-h-screen bg-[#050505] text-gray-100">
+        <Header />
+        <EnterpriseDetail />
         <Footer />
       </div>
     );

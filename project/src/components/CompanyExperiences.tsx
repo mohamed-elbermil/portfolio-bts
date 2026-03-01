@@ -74,11 +74,11 @@ const CompanyExperience = () => {
           }
         }
       });
-    } catch {}
+    } catch { void 0; }
     return () => {
       try {
         ScrollTrigger.getAll().forEach(t => t.kill());
-      } catch {}
+      } catch { void 0; }
     };
   }, []);
 
@@ -260,7 +260,14 @@ const CompanyExperience = () => {
         </div>
         </Reveal>
       </div>
-      <button>En savoir +</button>
+      <div className="max-w-6xl mx-auto px-6">
+        <a
+          href="#entreprises-detail"
+          className="inline-flex items-center px-6 py-3 bg-white/5 text-white font-semibold rounded-2xl border border-white/10 hover:border-white/30 transition-all"
+        >
+          En savoir +
+        </a>
+      </div>
     </section>
   );
 };

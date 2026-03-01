@@ -128,11 +128,11 @@ const Projects = () => {
           }
         }
       });
-    } catch {}
+    } catch { void 0; }
     return () => {
       try {
         ScrollTrigger.getAll().forEach(t => t.kill());
-      } catch {}
+      } catch { void 0; }
     };
   }, []);
 
