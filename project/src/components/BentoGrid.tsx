@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Code, Database, Terminal, Layers, Settings, Cpu } from 'lucide-react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const BentoGrid = () => {
+  const gridRef = useRef<HTMLDivElement>(null);
   const cards = [
     {
       title: 'PHP',
@@ -101,6 +105,35 @@ const BentoGrid = () => {
     },
   ];
 
+  useEffect(() => {
+    try {
+      ScrollTrigger.matchMedia({
+        "(min-width: 769px)": () => {
+          const root = gridRef.current as Element | null;
+          if (!root) return;
+          const els = root.querySelectorAll('.bento-card');
+          if (!els || els.length === 0) return;
+          gsap.set(els, { opacity: 0, y: 30 });
+          gsap.to(els, {
+            opacity: 1,
+            y: 0,
+            stagger: 0.1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: root,
+              start: "top 80%",
+            },
+          });
+        },
+      });
+    } catch {}
+    return () => {
+      try {
+        ScrollTrigger.getAll().forEach(t => t.kill());
+      } catch {}
+    };
+  }, []);
+
   return (
     <section id="competences" className="py-24">
       <div className="max-w-6xl mx-auto px-6">
@@ -108,11 +141,11 @@ const BentoGrid = () => {
           <h2 className="text-5xl md:text-6xl font-bold tracking-tight -tracking-[0.02em]">Compétences en Bento Grid</h2>
           <p className="mt-4 text-gray-400 max-w-2xl">Présentation minimaliste et immersive, avec micro-interactions premium.</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card, i) => (
             <div
               key={i}
-              className={`group relative overflow-hidden rounded-2xl p-6 bg-white/3 backdrop-blur-xl border border-white/10 ${card.border} transition-all duration-300`}
+              className={`bento-card group relative overflow-hidden rounded-2xl p-6 bg-white/3 backdrop-blur-xl border border-white/10 ${card.border} transition-all duration-300`}
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${card.accent}`} />
               <div className="relative z-10 flex items-center justify-between">
@@ -136,3 +169,11 @@ const BentoGrid = () => {
 };
 
 export default BentoGrid;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

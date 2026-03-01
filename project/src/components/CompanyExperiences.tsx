@@ -10,6 +10,10 @@ import {
 } from 'lucide-react';
 import PGW from '../assets/images/PGW.png';
 import Reveal from './Reveal';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const BehanceIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 32 32" fill="currentColor" width={24} height={24} {...props}>
@@ -49,13 +53,42 @@ const CompanyExperience = () => {
     },
   ];
 
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    try {
+      ScrollTrigger.matchMedia({
+        "(min-width: 769px)": () => {
+          const section = sectionRef.current;
+          if (!section) return;
+          const titleInner = section.querySelector('.company-title-inner');
+          if (titleInner) {
+            gsap.fromTo(titleInner, { yPercent: 100 }, {
+              yPercent: 0,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: titleInner,
+                start: "top 85%",
+              }
+            });
+          }
+        }
+      });
+    } catch {}
+    return () => {
+      try {
+        ScrollTrigger.getAll().forEach(t => t.kill());
+      } catch {}
+    };
+  }, []);
+
   return (
     <section id="entreprises" className="py-24">
-      <div className="max-w-6xl mx-auto px-6">
+      <div ref={sectionRef} className="max-w-6xl mx-auto px-6">
         <Reveal>
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-100 mb-6 tracking-tight -tracking-[0.02em]">
-            Expérience Entreprise
+          <h2 className="overflow-hidden text-5xl md:text-6xl font-bold text-gray-100 mb-6 tracking-tight -tracking-[0.02em]">
+            <span className="company-title-inner inline-block translate-y-full">Expérience Entreprise</span>
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Découvrez les environnements professionnels qui ont façonné mon expertise
@@ -227,6 +260,7 @@ const CompanyExperience = () => {
         </div>
         </Reveal>
       </div>
+      <button>En savoir +</button>
     </section>
   );
 };

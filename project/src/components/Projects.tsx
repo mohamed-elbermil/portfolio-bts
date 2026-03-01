@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import moovyImg from '../assets/images/moovy.png';
 import fitnessAreaImg from '../assets/images/fitness-area.png';
 import vintedImg from '../assets/images/vinted.png';
 import { ExternalLink, Github, Users, Star } from 'lucide-react';
 import Reveal from './Reveal';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
   const projects = [
     {
       title: "Fitness-Area",
@@ -71,13 +75,74 @@ const Projects = () => {
     }
   ];
 
+  useEffect(() => {
+    try {
+      ScrollTrigger.matchMedia({
+        "(min-width: 769px)": () => {
+          const section = sectionRef.current;
+          if (!section) return;
+          const cards = section.querySelectorAll('.project-card');
+          const images = section.querySelectorAll('.project-image');
+          ScrollTrigger.create({
+            trigger: section,
+            start: "top top",
+            end: () => "+=800",
+            pin: section,
+            pinSpacing: true,
+          });
+          gsap.fromTo(cards, { scale: 0.8 }, {
+            scale: 1,
+            ease: "expo.out",
+            stagger: 0.2,
+            scrollTrigger: {
+              trigger: section,
+              start: "top top",
+              end: () => "+=800",
+              scrub: true,
+            }
+          });
+          images.forEach((img, i) => {
+            const card = cards[i];
+            if (!card) return;
+            gsap.to(img, {
+              yPercent: -15,
+              ease: "none",
+              scrollTrigger: {
+                trigger: card,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+              }
+            });
+          });
+          const titleInner = section.querySelector('.projects-title-inner');
+          if (titleInner) {
+            gsap.fromTo(titleInner, { yPercent: 100 }, {
+              yPercent: 0,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: titleInner,
+                start: "top 85%",
+              }
+            });
+          }
+        }
+      });
+    } catch {}
+    return () => {
+      try {
+        ScrollTrigger.getAll().forEach(t => t.kill());
+      } catch {}
+    };
+  }, []);
+
   return (
     <section id="projets" className="py-24">
-      <div className="max-w-6xl mx-auto px-6">
+      <div ref={sectionRef} className="max-w-6xl mx-auto px-6">
         <Reveal>
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-100 mb-6 tracking-tight -tracking-[0.02em]">
-            Projets Réalisés
+          <h2 className="overflow-hidden text-5xl md:text-6xl font-bold text-gray-100 mb-6 tracking-tight -tracking-[0.02em]">
+            <span className="projects-title-inner inline-block translate-y-full">Projets Réalisés</span>
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed mb-8">
             Une sélection de projets qui démontrent l'étendue de mon expertise technique
@@ -90,14 +155,14 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group bg-white/3 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden transition-all duration-300"
+              className="project-card group bg-white/3 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden transition-all duration-300"
             >
               {/* Project Image */}
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="project-image w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>

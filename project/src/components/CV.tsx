@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Download, MapPin, Building, GraduationCap, Award } from 'lucide-react';
 import cvPdf from '../assets/documents/cv-mohamed-elbermil.pdf';
 import Reveal from './Reveal';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const CV = () => {
   const experiences = [
@@ -93,13 +96,42 @@ const CV = () => {
     document.body.removeChild(link);
   };
 
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    try {
+      ScrollTrigger.matchMedia({
+        "(min-width: 769px)": () => {
+          const section = sectionRef.current;
+          if (!section) return;
+          const titleInner = section.querySelector('.cv-title-inner');
+          if (titleInner) {
+            gsap.fromTo(titleInner, { yPercent: 100 }, {
+              yPercent: 0,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: titleInner,
+                start: "top 85%",
+              }
+            });
+          }
+        }
+      });
+    } catch {}
+    return () => {
+      try {
+        ScrollTrigger.getAll().forEach(t => t.kill());
+      } catch {}
+    };
+  }, []);
+
   return (
     <section id="cv" className="py-24">
-      <div className="max-w-6xl mx-auto px-6">
+      <div ref={sectionRef} className="max-w-6xl mx-auto px-6">
         <Reveal>
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-100 mb-6 tracking-tight -tracking-[0.02em]">
-            Parcours Professionnel
+          <h2 className="overflow-hidden text-5xl md:text-6xl font-bold text-gray-100 mb-6 tracking-tight -tracking-[0.02em]">
+            <span className="cv-title-inner inline-block translate-y-full">Parcours Professionnel</span>
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed mb-8">
             Une trajectoire dédiée à l'excellence technique et à l'innovation constante
