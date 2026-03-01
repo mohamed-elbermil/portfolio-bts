@@ -77,54 +77,45 @@ const EnterpriseDetail = () => {
             </div>
           </div>
           <div className="bg-white/3 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
-            <div className="text-sm text-gray-300">Contexte</div>
-            <div className="text-gray-200">Intégration au sein d’une équipe produit, contribution aux interfaces, performance, accessibilité et outillage.</div>
+            <div className="text-sm text-gray-300">Contexte</div><br />
+            <div className="text-gray-200">Le groupe PenguinWorld propose une large gamme de services pour les professionnels et les voyageurs. Cette diversité est au cœur de notre identité et de notre mission, portée par des équipes d’experts passionnés.
+Pour nous, un voyage réussi est celui où chaque maillon de la chaîne humaine est présent, permettant au voyageur de gagner en liberté et en découverte.
+Guidés par nos passions et nos rêves, nous avons à cœur de rapprocher les peuples et de contribuer à diffuser la paix, sur les routes, les mers et à travers le monde. N’hésitez jamais à explorer au-delà des frontières, des pays et des croyances.
+</div>
           </div>
         </div>
       </section>
 
       <section id="ecosystem" className="py-24">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight -tracking-[0.02em]">L’Écosystème</h2>
-          <p className="text-gray-400 mb-10">Présentation du groupe, de ses produits et des pratiques de distribution digitale.</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="eco-card bg-white/3 border border-white/10 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Layers className="w-5 h-5" />
-                <div className="font-semibold">Produits</div>
-              </div>
-              <div className="text-gray-300">Plateformes de réservation, portails clients, back-office.</div>
-            </div>
-            <div className="eco-card bg-white/3 border border-white/10 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Users className="w-5 h-5" />
-                <div className="font-semibold">Partenaires</div>
-              </div>
-              <div className="text-gray-300">Tour-opérateurs, distributeurs, enseignes grand public.</div>
-            </div>
-            <div className="eco-card bg-white/3 border border-white/10 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Layers className="w-5 h-5" />
-                <div className="font-semibold">Technologies</div>
-              </div>
-              <div className="text-gray-300">Front moderne, APIs, outillage DevOps.</div>
-            </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight -tracking-[0.02em]">Les services</h2>
+          <p className="text-gray-400 mb-10">Penguin World regroupe plusieurs sociétés :</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <img src={PGW} alt="Logo entreprise" className="w-36 h-36 object-contain mb-6" />
+            <img src={PGW} alt="Logo entreprise" className="w-36 h-36 object-contain mb-6" />
+            <img src={PGW} alt="Logo entreprise" className="w-36 h-36 object-contain mb-6" />
+            <img src={PGW} alt="Logo entreprise" className="w-36 h-36 object-contain mb-6" />
+            <img src={PGW} alt="Logo entreprise" className="w-36 h-36 object-contain mb-6" />
+            <img src={PGW} alt="Logo entreprise" className="w-36 h-36 object-contain mb-6" />
           </div>
 
+
           <div className="mt-12 bg-white/3 border border-white/10 rounded-2xl p-6">
-            <div className="font-mono text-sm text-gray-300 mb-3">Marque Blanche</div>
+            <div className="font-mono text-sm text-gray-300 mb-3">Définitions</div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="rounded-2xl p-4 bg-white/5 border border-white/10">
-                <div className="text-gray-200">Noyau Applicatif</div>
-                <div className="text-xs text-gray-400">Fonctions communes, sécurité, performance</div>
+                <div className="text-gray-200">Vente de marques blanche</div>
+                <div className="text-xs text-gray-400">Produit/service réutilisable par d’autres marques sans mention du fabricant d’origine.</div>
+                
+                <img src={PGW} alt="Logo entreprise" className="w-12 h-12 object-contain" />
+                <img src={PGW} alt="Logo entreprise" className="w-12 h-12 object-contain" />
               </div>
               <div className="rounded-2xl p-4 bg-white/5 border border-white/10">
-                <div className="text-gray-200">Thèmes & Branding</div>
-                <div className="text-xs text-gray-400">Palette, composants, assets</div>
-              </div>
-              <div className="rounded-2xl p-4 bg-white/5 border border-white/10">
-                <div className="text-gray-200">Déploiement</div>
-                <div className="text-xs text-gray-400">Intégration par client, SLA</div>
+                <div className="text-gray-200">Vente de voyages</div>
+                <div className="text-xs text-gray-400">Tous ces sites facilitent l’accès à des offres de voyage pour les utilisateurs, en centralisant l’information et en permettant de comparer et réserver facilement.
+                </div>
+                <img src={PGW} alt="Logo entreprise" className="w-12 h-12 object-contain" />
+                <img src={PGW} alt="Logo entreprise" className="w-12 h-12 object-contain" />
               </div>
             </div>
           </div>
