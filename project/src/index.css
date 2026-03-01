@@ -47,3 +47,11 @@
 .animate-bounce-slow {
   animation: bounce-slow 2s ease-in-out infinite;
 }
+
+section {
+  background-color: #050505;
+}
+
+section:nth-child(even) {
+  background-color: #19191a;
+}

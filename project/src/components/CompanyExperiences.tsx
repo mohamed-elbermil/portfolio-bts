@@ -9,6 +9,7 @@ import {
   Award,
 } from 'lucide-react';
 import PGW from '../assets/images/PGW.png';
+import Reveal from './Reveal';
 
 const BehanceIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 32 32" fill="currentColor" width={24} height={24} {...props}>
@@ -49,13 +50,14 @@ const CompanyExperience = () => {
   ];
 
   return (
-    <section id="entreprises" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="container mx-auto px-6">
+    <section id="entreprises" className="py-24">
+      <div className="max-w-6xl mx-auto px-6">
+        <Reveal>
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-100 mb-6 tracking-tight -tracking-[0.02em]">
             Expérience Entreprise
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Découvrez les environnements professionnels qui ont façonné mon expertise
             et les missions qui ont enrichi mon parcours de développeur.
           </p>
@@ -65,7 +67,7 @@ const CompanyExperience = () => {
           {companies.map((company, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-white/3 rounded-2xl border border-white/10 overflow-hidden transition-all duration-300"
             >
               <div className="relative h-64 overflow-hidden">
                 <img
@@ -79,7 +81,7 @@ const CompanyExperience = () => {
                   {/* Company Header */}
                   <div className="lg:w-1/3 mb-8 lg:mb-0">
                     <div className="flex items-center mb-6">
-                      <div className="w-16 h-16 rounded-2xl overflow-hidden mr-4 shadow-md bg-white p-1">
+                      <div className="w-16 h-16 rounded-2xl overflow-hidden mr-4 border border-white/10 bg-white/5 p-1">
                         <img
                           src={company.logo}
                           alt={`${company.name} logo`}
@@ -87,52 +89,52 @@ const CompanyExperience = () => {
                         />
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-800">{company.name}</h3>
-                        <p className="text-blue-600 font-semibold">{company.period}</p>
+                        <h3 className="text-2xl font-bold text-gray-100">{company.name}</h3>
+                        <p className="text-gray-300 font-semibold">{company.period}</p>
                       </div>
                       <a
                         href="https://www.behance.net/mohamedelbermil2"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Behance"
-                        className="ml-4 p-2 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors"
+                        className="ml-4 p-2 bg-white/5 rounded-2xl border border-white/10 hover:border-white/30 transition-colors"
                       >
-                        <BehanceIcon className="w-7 h-7 text-blue-600" />
+                        <BehanceIcon className="w-7 h-7 text-gray-200" />
                       </a>
                     </div>
 
                     {/* Company Info Cards */}
                     <div className="space-y-4">
-                      <div className="bg-gray-50 rounded-xl p-4">
+                      <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
                         <div className="flex items-center mb-2">
-                          <Users className="w-5 h-5 text-blue-500 mr-2" />
-                          <span className="font-semibold text-gray-800">Taille</span>
+                          <Users className="w-5 h-5 text-gray-200 mr-2" />
+                          <span className="font-semibold text-gray-100">Taille</span>
                         </div>
-                        <p className="text-gray-600">{company.size}</p>
+                        <p className="text-gray-300">{company.size}</p>
                       </div>
 
-                      <div className="bg-gray-50 rounded-xl p-4">
+                      <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
                         <div className="flex items-center mb-2">
-                          <TrendingUp className="w-5 h-5 text-purple-500 mr-2" />
-                          <span className="font-semibold text-gray-800">Secteur</span>
+                          <TrendingUp className="w-5 h-5 text-gray-200 mr-2" />
+                          <span className="font-semibold text-gray-100">Secteur</span>
                         </div>
-                        <p className="text-gray-600">{company.sector}</p>
+                        <p className="text-gray-300">{company.sector}</p>
                       </div>
 
-                      <div className="bg-gray-50 rounded-xl p-4">
+                      <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
                         <div className="flex items-center mb-2">
-                          <MapPin className="w-5 h-5 text-green-500 mr-2" />
-                          <span className="font-semibold text-gray-800">Localisation</span>
+                          <MapPin className="w-5 h-5 text-gray-200 mr-2" />
+                          <span className="font-semibold text-gray-100">Localisation</span>
                         </div>
-                        <p className="text-gray-600">{company.location}</p>
+                        <p className="text-gray-300">{company.location}</p>
                       </div>
 
-                      <div className="bg-gray-50 rounded-xl p-4">
+                      <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
                         <div className="flex items-center mb-2">
-                          <Briefcase className="w-5 h-5 text-orange-500 mr-2" />
-                          <span className="font-semibold text-gray-800">Poste</span>
+                          <Briefcase className="w-5 h-5 text-gray-200 mr-2" />
+                          <span className="font-semibold text-gray-100">Poste</span>
                         </div>
-                        <p className="text-gray-600 font-medium">{company.position}</p>
+                        <p className="text-gray-300 font-medium">{company.position}</p>
                       </div>
                     </div>
                   </div>
@@ -141,24 +143,24 @@ const CompanyExperience = () => {
                   <div className="lg:w-2/3">
                     {/* Activity */}
                     <div className="mb-8">
-                      <h4 className="text-xl font-bold text-gray-800 mb-3 flex items-center">
-                        <Building className="w-6 h-6 mr-2 text-blue-500" />
+                      <h4 className="text-xl font-bold text-gray-100 mb-3 flex items-center">
+                        <Building className="w-6 h-6 mr-2 text-gray-200" />
                         Activité de l'entreprise
                       </h4>
-                      <p className="text-gray-600 leading-relaxed">{company.activity}</p>
+                      <p className="text-gray-300 leading-relaxed">{company.activity}</p>
                     </div>
 
                     {/* Missions */}
                     <div className="mb-8">
-                      <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                        <Target className="w-6 h-6 mr-2 text-purple-500" />
+                      <h4 className="text-xl font-bold text-gray-100 mb-4 flex items-center">
+                        <Target className="w-6 h-6 mr-2 text-gray-200" />
                         Missions principales
                       </h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {company.missions.map((mission, idx) => (
                           <div key={idx} className="flex items-start">
-                            <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <span className="text-gray-600 text-sm">{mission}</span>
+                            <div className="w-2 h-2 bg-white/40 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <span className="text-gray-300 text-sm">{mission}</span>
                           </div>
                         ))}
                       </div>
@@ -166,15 +168,15 @@ const CompanyExperience = () => {
 
                     {/* Achievements */}
                     <div className="mb-8">
-                      <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                        <Award className="w-6 h-6 mr-2 text-green-500" />
+                      <h4 className="text-xl font-bold text-gray-100 mb-4 flex items-center">
+                        <Award className="w-6 h-6 mr-2 text-gray-200" />
                         Réalisations clés
                       </h4>
                       <div className="space-y-3">
                         {company.achievements.map((achievement, idx) => (
                           <div key={idx} className="flex items-start">
-                            <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <span className="text-gray-600 text-sm font-medium">{achievement}</span>
+                            <div className="w-2 h-2 bg-white/40 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <span className="text-gray-300 text-sm font-medium">{achievement}</span>
                           </div>
                         ))}
                       </div>
@@ -182,12 +184,12 @@ const CompanyExperience = () => {
 
                     {/* Technologies */}
                     <div>
-                      <h4 className="text-lg font-bold text-gray-800 mb-3">Technologies utilisées</h4>
+                      <h4 className="text-lg font-bold text-gray-100 mb-3">Technologies utilisées</h4>
                       <div className="flex flex-wrap gap-2">
                         {company.technologies.map((tech, idx) => (
                           <span
                             key={idx}
-                            className="px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full"
+                            className="px-3 py-1 bg-white/5 text-gray-200 text-sm font-medium rounded-full border border-white/10"
                           >
                             {tech}
                           </span>
@@ -202,27 +204,28 @@ const CompanyExperience = () => {
         </div>
 
         {/* Summary Stats */}
-        <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg">
-          <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Bilan de l'expérience</h3>
+        <div className="mt-16 bg-white/3 rounded-2xl p-8 border border-white/10">
+          <h3 className="text-2xl font-bold text-gray-100 mb-8 text-center">Bilan de l'expérience</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">1</div>
-              <div className="text-gray-600">Entreprise</div>
+              <div className="text-3xl font-bold text-gray-100 mb-2">1</div>
+              <div className="text-gray-300">Entreprise</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-purple-600 mb-2">100+</div>
-              <div className="text-gray-600">Employés encadrés</div>
+              <div className="text-3xl font-bold text-gray-100 mb-2">100+</div>
+              <div className="text-gray-300">Employés encadrés</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-green-600 mb-2">150+</div>
-              <div className="text-gray-600">Projets livrés</div>
+              <div className="text-3xl font-bold text-gray-100 mb-2">150+</div>
+              <div className="text-gray-300">Projets livrés</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-orange-600 mb-2">22+</div>
-              <div className="text-gray-600">Années d'expérience</div>
+              <div className="text-3xl font-bold text-gray-100 mb-2">22+</div>
+              <div className="text-gray-300">Années d'expérience</div>
             </div>
           </div>
         </div>
+        </Reveal>
       </div>
     </section>
   );

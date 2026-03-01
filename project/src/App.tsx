@@ -3,11 +3,11 @@ import CompanyExperience from './components/CompanyExperiences';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import TechWatch from './components/TechWatch';
-import Skills from './components/Skills';
 import CV from './components/CV';
-import Projects from './components/Projects';
 import Footer from './components/Footer';
 import TechWatchArchive from './pages/TechWatchArchive';
+import BentoGrid from './components/BentoGrid';
+import CaseStudies from './components/CaseStudies';
 
 function App() {
   const [route, setRoute] = useState<string>(window.location.hash || '#home');
@@ -20,7 +20,7 @@ function App() {
 
   if (route === '#veille-archive') {
     return (
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-[#050505] text-gray-100">
         <Header />
         <TechWatchArchive />
         <Footer />
@@ -29,13 +29,13 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#050505] text-gray-100">
       <Header />
       <Hero />
-      <Skills />
+      <BentoGrid />
       <CV />
-      <CompanyExperience/>
-      <Projects />
+      <CompanyExperience />
+      <CaseStudies />
       <TechWatch />
       <Footer />
     </div>

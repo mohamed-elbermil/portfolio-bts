@@ -1,6 +1,7 @@
 import React from 'react';
 import { Download, MapPin, Building, GraduationCap, Award } from 'lucide-react';
 import cvPdf from '../assets/documents/cv-mohamed-elbermil.pdf';
+import Reveal from './Reveal';
 
 const CV = () => {
   const experiences = [
@@ -93,20 +94,21 @@ const CV = () => {
   };
 
   return (
-    <section id="cv" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="container mx-auto px-6">
+    <section id="cv" className="py-24">
+      <div className="max-w-6xl mx-auto px-6">
+        <Reveal>
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-100 mb-6 tracking-tight -tracking-[0.02em]">
             Parcours Professionnel
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed mb-8">
             Une trajectoire dédiée à l'excellence technique et à l'innovation constante
             dans l'écosystème du développement moderne.
           </p>
           
           <button 
             onClick={handleDownload}
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200"
+            className="inline-flex items-center px-6 py-3 bg-white/5 text-white font-semibold rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-200"
           >
             <Download className="w-5 h-5 mr-2" />
             Télécharger le CV
@@ -116,39 +118,39 @@ const CV = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Experience Section */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                <Building className="w-6 h-6 mr-3 text-blue-500" />
+            <div className="bg-white/3 rounded-2xl p-8 border border-white/10 mb-8">
+              <h3 className="text-2xl font-bold text-gray-100 mb-6 flex items-center">
+                <Building className="w-6 h-6 mr-3 text-gray-200" />
                 Expérience Professionnelle
               </h3>
               
               <div className="space-y-8">
                 {experiences.map((exp, index) => (
-                  <div key={index} className="relative pl-8 border-l-2 border-blue-200 last:border-l-0">
-                    <div className="absolute w-4 h-4 bg-blue-500 rounded-full -left-2 top-0"></div>
+                  <div key={index} className="relative pl-8 border-l-2 border-white/10 last:border-l-0">
+                    <div className="absolute w-4 h-4 bg-white/40 rounded-full -left-2 top-0"></div>
                     
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                      <h4 className="text-xl font-bold text-gray-800">{exp.title}</h4>
-                      <span className="text-sm text-blue-600 font-semibold bg-blue-100 px-3 py-1 rounded-full">
+                      <h4 className="text-xl font-bold text-gray-100">{exp.title}</h4>
+                      <span className="text-sm text-gray-200 font-semibold bg-white/5 px-3 py-1 rounded-full border border-white/10">
                         {exp.period}
                       </span>
                     </div>
                     
-                    <div className="flex items-center text-gray-600 mb-3">
-                      <Building className="w-4 h-4 mr-2" />
-                      <span className="font-medium">{exp.company}</span>
+                    <div className="flex items-center text-gray-300 mb-3">
+                      <Building className="w-4 h-4 mr-2 text-gray-200" />
+                      <span className="font-medium text-gray-200">{exp.company}</span>
                       <span className="mx-2">•</span>
-                      <MapPin className="w-4 h-4 mr-1" />
-                      <span>{exp.location}</span>
+                      <MapPin className="w-4 h-4 mr-1 text-gray-200" />
+                      <span className="text-gray-300">{exp.location}</span>
                     </div>
                     
-                    <p className="text-gray-600 mb-4">{exp.description}</p>
+                    <p className="text-gray-300 mb-4">{exp.description}</p>
                     
                     <div className="space-y-2">
                       {exp.achievements.map((achievement, idx) => (
                         <div key={idx} className="flex items-start">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">{achievement}</span>
+                          <div className="w-2 h-2 bg-white/40 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <span className="text-gray-300 text-sm">{achievement}</span>
                         </div>
                       ))}
                     </div>
@@ -158,33 +160,33 @@ const CV = () => {
             </div>
 
             {/* Education Section */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                <GraduationCap className="w-6 h-6 mr-3 text-purple-500" />
+            <div className="bg-white/3 rounded-2xl p-8 border border-white/10">
+              <h3 className="text-2xl font-bold text-gray-100 mb-6 flex items-center">
+                <GraduationCap className="w-6 h-6 mr-3 text-gray-200" />
                 Formation
               </h3>
               
               <div className="space-y-6">
                 {education.map((edu, index) => (
-                  <div key={index} className="relative pl-8 border-l-2 border-purple-200 last:border-l-0">
-                    <div className="absolute w-4 h-4 bg-purple-500 rounded-full -left-2 top-0"></div>
+                  <div key={index} className="relative pl-8 border-l-2 border-white/10 last:border-l-0">
+                    <div className="absolute w-4 h-4 bg-white/40 rounded-full -left-2 top-0"></div>
                     
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                      <h4 className="text-xl font-bold text-gray-800">{edu.title}</h4>
-                      <span className="text-sm text-purple-600 font-semibold bg-purple-100 px-3 py-1 rounded-full">
+                      <h4 className="text-xl font-bold text-gray-100">{edu.title}</h4>
+                      <span className="text-sm text-gray-200 font-semibold bg-white/5 px-3 py-1 rounded-full border border-white/10">
                         {edu.period}
                       </span>
                     </div>
                     
-                    <div className="flex items-center text-gray-600 mb-2">
-                      <Building className="w-4 h-4 mr-2" />
-                      <span className="font-medium">{edu.institution}</span>
+                    <div className="flex items-center text-gray-300 mb-2">
+                      <Building className="w-4 h-4 mr-2 text-gray-200" />
+                      <span className="font-medium text-gray-200">{edu.institution}</span>
                       <span className="mx-2">•</span>
-                      <MapPin className="w-4 h-4 mr-1" />
-                      <span>{edu.location}</span>
+                      <MapPin className="w-4 h-4 mr-1 text-gray-200" />
+                      <span className="text-gray-300">{edu.location}</span>
                     </div>
                     
-                    <p className="text-gray-600">{edu.description}</p>
+                    <p className="text-gray-300">{edu.description}</p>
                   </div>
                 ))}
               </div>
@@ -194,26 +196,26 @@ const CV = () => {
           {/* Sidebar */}
           <div className="space-y-8">
             {/* Certifications */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                <Award className="w-5 h-5 mr-2 text-yellow-500" />
+            <div className="bg-white/3 rounded-2xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-gray-100 mb-4 flex items-center">
+                <Award className="w-5 h-5 mr-2 text-gray-200" />
                 Certifications
               </h3>
               
               <div className="space-y-4">
                 {certifications.map((cert, index) => (
                   <div key={index} className="border-l-4 border-yellow-400 pl-4">
-                    <div className="font-semibold text-gray-800">{cert.name}</div>
-                    <div className="text-sm text-gray-600">{cert.issuer}</div>
-                    <div className="text-xs text-yellow-600 font-medium">{cert.year}</div>
+                    <div className="font-semibold text-gray-100">{cert.name}</div>
+                    <div className="text-sm text-gray-300">{cert.issuer}</div>
+                    <div className="text-xs text-gray-200 font-medium">{cert.year}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Languages */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Langues</h3>
+            <div className="bg-white/3 rounded-2xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-gray-100 mb-4">Langues</h3>
               
               <div className="space-y-3">
                 {[
@@ -222,8 +224,8 @@ const CV = () => {
                   { lang: "Arabe", level: "Intermédiaire avancé"}
                 ].map((language, index) => (
                   <div key={index} className="flex justify-between items-center">
-                    <span className="font-medium text-gray-800">{language.lang}</span>
-                    <span className="text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded">
+                    <span className="font-medium text-gray-100">{language.lang}</span>
+                    <span className="text-sm text-gray-200 bg-white/5 px-2 py-1 rounded border border-white/10">
                       {language.level}
                     </span>
                   </div>
@@ -232,6 +234,7 @@ const CV = () => {
             </div>
           </div>
         </div>
+        </Reveal>
       </div>
     </section>
   );

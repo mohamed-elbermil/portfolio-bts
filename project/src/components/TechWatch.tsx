@@ -1,5 +1,6 @@
 // Import des hooks React pour gérer l'état local et les effets de cycle de vie
 import React, { useEffect, useState } from 'react';
+import Reveal from './Reveal';
 // Icône de lien externe affichée sur chaque carte d'actualité
 import { ExternalLink } from 'lucide-react';
 
@@ -66,22 +67,21 @@ const TechWatch = () => {
   }, []);
 
   return (
-    <section id="veille" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-10">
+    <section id="veille" className="py-24">
+      <div className="max-w-6xl mx-auto px-6">
+        <Reveal>
+        <h2 className="text-5xl md:text-6xl font-bold text-center text-gray-100 mb-10 tracking-tight -tracking-[0.02em]">
           Veille Technologique
         </h2>
 
-        <h3 className="text-2xl font-bold text-gray-800 mb-4">
-          Actualités récentes
-        </h3>
+        <h3 className="text-2xl font-bold text-gray-100 mb-4">Actualités récentes</h3>
 
         {/* Grille responsive: 3 colonnes sur desktop */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Message de chargement */}
-          {loading && <p className="col-span-3 text-center text-gray-500">Chargement…</p>}
+          {loading && <p className="col-span-3 text-center text-gray-400">Chargement…</p>}
           {/* Message d'erreur */}
-          {error && <p className="col-span-3 text-center text-red-600">{error}</p>}
+          {error && <p className="col-span-3 text-center text-red-500">{error}</p>}
 
           {/* Cartes d'actualités lorsque les données sont disponibles */}
           {!loading && !error &&
@@ -91,17 +91,17 @@ const TechWatch = () => {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white rounded-2xl p-5 shadow hover:shadow-lg border border-gray-100 flex flex-col"
+                className="bg-white/3 rounded-2xl p-5 backdrop-blur-xl border border-white/10 flex flex-col"
               >
                 {/* En-tête de carte: source et icône de lien externe */}
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-blue-600 font-semibold">{item.source}</span>
-                  <ExternalLink className="w-4 h-4 text-blue-500" />
+                  <span className="text-sm text-gray-200 font-semibold">{item.source}</span>
+                  <ExternalLink className="w-4 h-4 text-gray-300" />
                 </div>
 
                 {/* Titre de l'article et date formatée en français */}
-                <div className="text-gray-800 font-medium mb-2">{item.title}</div>
-                <div className="text-xs text-gray-500">
+                <div className="text-gray-100 font-medium mb-2">{item.title}</div>
+                <div className="text-xs text-gray-400">
                   {item.date.toLocaleDateString("fr-FR")}
                 </div>
               </a>
@@ -111,11 +111,12 @@ const TechWatch = () => {
         <div className="mt-10 text-center">
           <a
             href="#veille-archive"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
+            className="inline-flex items-center px-6 py-3 bg-white/5 text-white font-semibold rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-200"
           >
             Voir plus de veille technologique
           </a>
         </div>
+        </Reveal>
       </div>
     </section>
   );

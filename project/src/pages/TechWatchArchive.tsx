@@ -1,5 +1,6 @@
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
+import Reveal from '../components/Reveal';
 
 type ArchiveItem = {
   title: string;
@@ -56,16 +57,17 @@ const TechWatchArchive = () => {
   ];
 
   return (
-    <section id="veille-archive" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+    <section id="veille-archive" className="py-24">
+      <div className="max-w-6xl mx-auto px-6">
+        <Reveal>
         <div className="mb-10 flex items-center justify-between">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-2">Archive Veille Technologique</h2>
-            <p className="text-gray-600">Actualités marquantes depuis l'année dernière</p>
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-100 mb-2 tracking-tight -tracking-[0.02em]">Archive Veille Technologique</h2>
+            <p className="text-gray-400">Actualités marquantes depuis l'année dernière</p>
           </div>
           <a
             href="#veille"
-            className="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200"
+            className="inline-flex items-center px-4 py-2 bg-white/5 text-gray-100 rounded-2xl border border-white/10 hover:border-white/30"
           >
             Retour
           </a>
@@ -78,19 +80,20 @@ const TechWatchArchive = () => {
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-50 rounded-2xl p-6 shadow hover:shadow-lg border border-gray-100 flex flex-col"
+              className="bg-white/3 rounded-2xl p-6 backdrop-blur-xl border border-white/10 flex flex-col"
             >
               <div className="flex items-center justify-between mb-3">
                 <div>
-                  <div className="text-gray-800 font-semibold">{item.title}</div>
-                  <div className="text-xs text-gray-500">{new Date(item.date).toLocaleDateString('fr-FR')} • {item.source}</div>
+                  <div className="text-gray-100 font-semibold">{item.title}</div>
+                  <div className="text-xs text-gray-400">{new Date(item.date).toLocaleDateString('fr-FR')} • {item.source}</div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-blue-500" />
+                <ExternalLink className="w-4 h-4 text-gray-300" />
               </div>
-              <div className="text-sm text-gray-600">{item.summary}</div>
+              <div className="text-sm text-gray-300">{item.summary}</div>
             </a>
           ))}
         </div>
+        </Reveal>
       </div>
     </section>
   );

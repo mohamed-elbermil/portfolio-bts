@@ -34,13 +34,13 @@ const Footer = () => {
     `}
   </style>
     
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-6 py-16">
+    <footer className="text-white">
+      <div className="mx-auto max-w-6xl px-6 py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center overflow-hidden">
+              <div className="w-12 h-12 bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center overflow-hidden">
                 <img 
                   src="https://media.licdn.com/dms/image/v2/D4D35AQEJ26CEq8e3hg/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1737361151334?e=1750798800&v=beta&t=wQDRvrlCNWwoUFZIF_LS_z82wAiXgZPt_F2S2dT1ij4" 
                   alt="Mohamed EL BERMIL" 
@@ -48,7 +48,7 @@ const Footer = () => {
                 />
               </div>
               <div>
-                <h3 className="text-2xl font-bold">Mohamed EL BERMIL</h3>
+                <h3 className="text-2xl font-bold text-gray-100">Mohamed EL BERMIL</h3>
                 <p className="text-gray-400">Intégrateur Web</p>
               </div>
             </div>
@@ -61,7 +61,7 @@ const Footer = () => {
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center text-gray-300">
-                <Mail className="w-5 h-5 mr-3 text-blue-400" />
+                <Mail className="w-5 h-5 mr-3 text-gray-300" />
                 <a 
                   href="mailto:melbermil@outlook.fr"
                   className="hover:text-white transition-colors duration-200"
@@ -70,7 +70,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex items-center text-gray-300">
-                <MapPin className="w-5 h-5 mr-3 text-red-400" />
+                <MapPin className="w-5 h-5 mr-3 text-gray-300" />
                 <span>Lyon, France</span>
               </div>
             </div>
@@ -78,7 +78,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xl font-bold mb-6">Navigation</h4>
+            <h4 className="text-xl font-bold mb-6 text-gray-100">Navigation</h4>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -95,7 +95,7 @@ const Footer = () => {
 
           {/* Social Links */}
           <div>
-            <h4 className="text-xl font-bold mb-6">Réseaux Sociaux</h4>
+            <h4 className="text-xl font-bold mb-6 text-gray-100">Réseaux Sociaux</h4>
             <div className="flex space-x-4 mb-6">
               {socialLinks.map((social, index) => (
                 <a
@@ -104,7 +104,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 transition-all duration-200 transform hover:scale-110"
+                  className="w-12 h-12 bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-white/30 transition-all duration-200"
                 >
                   {social.icon}
                 </a>
@@ -115,7 +115,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-800 pt-8">
+        <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             
             <div className="flex space-x-6 text-sm text-gray-400">

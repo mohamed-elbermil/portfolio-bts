@@ -3,6 +3,7 @@ import moovyImg from '../assets/images/moovy.png';
 import fitnessAreaImg from '../assets/images/fitness-area.png';
 import vintedImg from '../assets/images/vinted.png';
 import { ExternalLink, Github, Users, Star } from 'lucide-react';
+import Reveal from './Reveal';
 
 const Projects = () => {
   const projects = [
@@ -71,13 +72,14 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projets" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+    <section id="projets" className="py-24">
+      <div className="max-w-6xl mx-auto px-6">
+        <Reveal>
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-100 mb-6 tracking-tight -tracking-[0.02em]">
             Projets Réalisés
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed mb-8">
             Une sélection de projets qui démontrent l'étendue de mon expertise technique
             et ma capacité à créer des solutions innovantes.
           </p>
@@ -88,29 +90,29 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden border border-gray-100"
+              className="group bg-white/3 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden transition-all duration-300"
             >
               {/* Project Image */}
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
 
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-3">{project.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">{project.description}</p>
+                <h3 className="text-xl font-bold text-gray-100 mb-3">{project.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">{project.description}</p>
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-medium rounded-full"
+                      className="px-3 py-1 bg-white/5 text-gray-200 text-xs font-medium rounded-full border border-white/10"
                     >
                       {tech}
                     </span>
@@ -119,11 +121,11 @@ const Projects = () => {
 
                 {/* Features */}
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-800 mb-2">Fonctionnalités clés :</h4>
+                  <h4 className="text-sm font-semibold text-gray-100 mb-2">Fonctionnalités clés :</h4>
                   <ul className="space-y-1">
                     {project.features.map((feature, idx) => (
-                      <li key={idx} className="text-xs text-gray-600 flex items-center">
-                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
+                      <li key={idx} className="text-xs text-gray-300 flex items-center">
+                        <div className="w-1.5 h-1.5 bg-white/40 rounded-full mr-2"></div>
                         {feature}
                       </li>
                     ))}
@@ -131,12 +133,12 @@ const Projects = () => {
                 </div>
 
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-800 mb-2">Compétences mobilisées :</h4>
+                  <h4 className="text-sm font-semibold text-gray-100 mb-2">Compétences mobilisées :</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.competences?.map((comp, idx) => (
                       <span
                         key={idx}
-                        className="px-2.5 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-full border border-purple-100"
+                        className="px-2.5 py-1 bg-white/5 text-gray-200 text-xs font-medium rounded-full border border-white/10"
                       >
                         {comp}
                       </span>
@@ -145,13 +147,13 @@ const Projects = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="flex items-center justify-between mb-4 text-sm text-gray-600">
+                <div className="flex items-center justify-between mb-4 text-sm text-gray-300">
                   <div className="flex items-center">
                     <Users className="w-4 h-4 mr-1" />
                     <span>{project.stats.users} utilisateurs</span>
                   </div>
                   <div className="flex items-center">
-                    <Star className="w-4 h-4 mr-1 text-yellow-500" />
+                    <Star className="w-4 h-4 mr-1 text-yellow-400" />
                     <span>{project.stats.rating}/5</span>
                   </div>
                 </div>
@@ -162,7 +164,7 @@ const Projects = () => {
                     <a
                       href={project.links.Site}
                       target="_blank"
-                      className="flex-1 flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium rounded-lg hover:shadow-lg transition-all duration-200"
+                      className="flex-1 flex items-center justify-center px-4 py-2 bg-white/5 text-white text-sm font-medium rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-200"
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Site web
@@ -171,7 +173,7 @@ const Projects = () => {
                   <a
                     href={project.links.github} 
                     target="_blank"
-                    className={`flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors duration-200 ${project.links.Site ? 'flex-1' : 'w-full'}`}
+                    className={`flex items-center justify-center px-4 py-2 bg-white/5 text-gray-100 text-sm font-medium rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-200 ${project.links.Site ? 'flex-1' : 'w-full'}`}
                   >
                     <Github className="w-4 h-4 mr-2" />
                     Code
@@ -182,6 +184,7 @@ const Projects = () => {
           ))}
         </div>
 
+        </Reveal>
       </div>
     </section>
   );
