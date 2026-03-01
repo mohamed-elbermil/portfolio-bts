@@ -2,20 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import PGW from '../assets/images/PGW.png';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowLeft, Layers, GitBranch, GitMerge, GitPullRequest } from 'lucide-react';
-import { 
-  Braces,
-  Package,
-  Cpu,
-  FileCode,
-  Laptop,
-  MessageSquare,
-  Mail,
-  MessageSquarePlus,
-  Video,
-  Kanban,
-  Globe
-} from 'lucide-react';
+import { ArrowLeft, Layers, GitBranch, GitMerge, GitPullRequest, FileCode, Kanban } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 const team = [
@@ -463,6 +450,84 @@ git push origin feature/ui-refresh
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <div>
+              <h3 className="text-3xl font-bold mb-6 tracking-tight -tracking-[0.02em]">Les réunions</h3>
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <span className="px-4 py-2 rounded-full bg-white/10 text-gray-100 font-semibold mr-3">Lundi et mercredi</span>
+                  <span className="px-4 py-2 rounded-full bg-white/5 text-gray-300">Organiser les nouveaux tickets et la livraison du reste de la semaine.</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="px-4 py-2 rounded-full bg-white/10 text-gray-100 font-semibold mr-3">Mercredi</span>
+                  <span className="px-4 py-2 rounded-full bg-white/5 text-gray-300">Les livraisons.</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="px-4 py-2 rounded-full bg-white/10 text-gray-100 font-semibold mr-3">Un vendredi sur deux</span>
+                  <span className="px-4 py-2 rounded-full bg-white/5 text-gray-300">Journée interne (Créer des outils utiles pour l'équipe: automatisation, timeline, etc.).</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="px-4 py-2 rounded-full bg-white/10 text-gray-100 font-semibold mr-3">Toute les 4 semaines</span>
+                  <span className="px-4 py-2 rounded-full bg-white/5 text-gray-300">Rétro pour évaluer les points positifs et faire le bilan.</span>
+                </div>
+              </div>
+              <div className="mt-8">
+                <h4 className="text-xl font-semibold text-gray-100 mb-3">Suivi du temps passé sur chaque projet</h4>
+                <ul className="space-y-2 text-gray-300 text-sm">
+                  <li>Logger son temps dans les tickets Gitlab.</li>
+                  <li>Visualiser le temps passé par chaque membre sur chaque projet (jour, semaine, mois).</li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-3xl font-bold mb-6 tracking-tight -tracking-[0.02em]">Statuts des tickets Gitlab</h3>
+              <div className="bg-white rounded-2xl p-6">
+                <ul className="space-y-3 text-gray-800 text-sm">
+                  <li><span className="font-semibold">À traiter :</span> La tâche ou MR est créée mais pas encore prise en charge. En attente d’assignation ou de priorisation.</li>
+                  <li><span className="font-semibold">En cours :</span> Le développement a commencé. Le code est en cours de modification dans une branche dédiée.</li>
+                  <li><span className="font-semibold">Validation technique :</span> Revue de code par l’équipe technique pour vérifier la qualité, le fonctionnement et le respect des standards.</li>
+                  <li><span className="font-semibold">Validation fonctionnelle :</span> Tests pour s’assurer que la fonctionnalité répond aux besoins fonctionnels et aux scénarios d’usage.</li>
+                  <li><span className="font-semibold">Déploiement prod :</span> Mise en production du code validé.</li>
+                  <li><span className="font-semibold">Livré :</span> La fonctionnalité est disponible pour les utilisateurs. Cycle terminé.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <h3 className="text-3xl font-bold mb-6 tracking-tight -tracking-[0.02em]">Les compétences acquises</h3>
+          <div className="bg-white/3 border border-white/10 rounded-2xl p-6">
+            <div className="flex flex-wrap gap-3">
+              {[
+                'Intégration web',
+                'Développement',
+                'RGAA',
+                'VueJS',
+                'SCSS',
+                'Intervenir sur plusieurs environnements',
+                'Résolution de bugs (nb voyageurs)',
+                'Commandes git/npm',
+                'Raccourcis clavier',
+                'GitLab',
+                'Design system',
+                'Configurer son IDE (tabs, extensions, indentation)',
+                'Emailing'
+              ].map((label, i) => (
+                <span
+                  key={i}
+                  className="px-4 py-2 rounded-full bg-white text-gray-800 text-sm shadow-sm"
+                >
+                  {label}
+                </span>
+              ))}
             </div>
           </div>
         </div>
