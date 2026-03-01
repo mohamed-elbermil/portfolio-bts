@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import PGW from '../assets/images/PGW.png';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowLeft, Users, Layers, GitBranch, GitMerge, GitPullRequest } from 'lucide-react';
+import { ArrowLeft, Layers, GitBranch, GitMerge, GitPullRequest } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 const team = [
@@ -185,6 +185,85 @@ git push origin feature/ui-refresh
             </div>
           </div>
         </div>
+      </section>
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <h3 className="text-3xl font-bold mb-6 tracking-tight -tracking-[0.02em]">Installation des outils et logiciels</h3>
+          <div className="bg-white/3 border border-white/10 rounded-2xl overflow-hidden">
+            <div className="hidden md:grid grid-cols-3 bg-white/5 text-gray-100 font-semibold">
+              <div className="px-4 py-3 border-r border-white/10">Catégorie</div>
+              <div className="px-4 py-3 border-r border-white/10">Outil</div>
+              <div className="px-4 py-3">Rôle et Utilisation</div>
+            </div>
+            <div className="divide-y divide-white/10">
+              <div className="grid md:grid-cols-3">
+                <div className="px-4 py-4 text-gray-300 border-r border-white/10">Développement</div>
+                <div className="px-4 py-4 text-gray-200 border-r border-white/10">Visual Studio Code (VS Code)</div>
+                <div className="px-4 py-4 text-gray-300">Éditeur utilisé pour corriger des bugs et créer des éléments web/logiciels.</div>
+              </div>
+              <div className="grid md:grid-cols-3">
+                <div className="px-4 py-4 text-gray-300 border-r border-white/10">Emailing</div>
+                <div className="px-4 py-4 text-gray-200 border-r border-white/10">Beefree</div>
+                <div className="px-4 py-4 text-gray-300">Création et édition de templates d’e‑mails pour campagnes et communications.</div>
+              </div>
+              <div className="grid md:grid-cols-3">
+                <div className="px-4 py-4 text-gray-300 border-r border-white/10">Gestion des Mots de Passe</div>
+                <div className="px-4 py-4 text-gray-200 border-r border-white/10">SysPass</div>
+                <div className="px-4 py-4 text-gray-300">Gestion sécurisée des mots de passe et des identifiants professionnels.</div>
+              </div>
+              <div className="grid md:grid-cols-3">
+                <div className="px-4 py-4 text-gray-300 border-r border-white/10">Gestion des Logiciels</div>
+                <div className="px-4 py-4 text-gray-200 border-r border-white/10">Chocolatey</div>
+                <div className="px-4 py-4 text-gray-300">Gestionnaire de paquets Windows, mise à jour et installation d’applications.</div>
+              </div>
+              <div className="grid md:grid-cols-3">
+                <div className="px-4 py-4 text-gray-300 border-r border-white/10">Communication Sécurisée</div>
+                <div className="px-4 py-4 text-gray-200 border-r border-white/10">Pidgin</div>
+                <div className="px-4 py-4 text-gray-300">Messagerie pour l’échange d’informations sensibles entre collaborateurs.</div>
+              </div>
+            </div>
+          </div>
+          <h3 className="text-3xl font-bold mb-6 mt-9 tracking-tight -tracking-[0.02em]">Familiarisation de l’arborescence et fonctionnements des projets</h3>
+          <div className="bg-white/3 border border-white/10 rounded-2xl overflow-hidden">
+            <div className="hidden md:grid grid-cols-3 bg-white/5 text-gray-100 font-semibold">
+              <div className="px-4 py-3 border-r border-white/10">Application</div>
+              <div className="px-4 py-3 border-r border-white/10">Stack / Version</div>
+              <div className="px-4 py-3">Rôle</div>
+            </div>
+            <div className="divide-y divide-white/10">
+              <div className="grid md:grid-cols-3">
+                <div className="px-4 py-4 text-gray-200 border-r border-white/10">RESULT</div>
+                <div className="px-4 py-4 text-gray-300 border-r border-white/10">
+                  <span className="inline-block px-2 py-1 rounded-full bg-white/5 border border-white/10 text-xs">Node.js 10.24</span>
+                </div>
+                <div className="px-4 py-4 text-gray-300">Interface permettant de choisir un voyage.</div>
+              </div>
+              <div className="grid md:grid-cols-3">
+                <div className="px-4 py-4 text-gray-200 border-r border-white/10">MT</div>
+                <div className="px-4 py-4 text-gray-300 border-r border-white/10">
+                  <span className="inline-block px-2 py-1 rounded-full bg-white/5 border border-white/10 text-xs">Node.js 18</span>
+                </div>
+                <div className="px-4 py-4 text-gray-300">Interface pour réserver et régler le montant d’un voyage.</div>
+              </div>
+              <div className="grid md:grid-cols-3">
+                <div className="px-4 py-4 text-gray-200 border-r border-white/10">SAV</div>
+                <div className="px-4 py-4 text-gray-300 border-r border-white/10">
+                  <span className="inline-block px-2 py-1 rounded-full bg-white/5 border border-white/10 text-xs">PHP 7.2</span>
+                </div>
+                <div className="px-4 py-4 text-gray-300">Interface pour suivre la commande ou contacter l’assistance.</div>
+              </div>
+              <div className="grid md:grid-cols-3">
+                <div className="px-4 py-4 text-gray-200 border-r border-white/10">Resacenter</div>
+                <div className="px-4 py-4 text-gray-300 border-r border-white/10">
+                  <span className="inline-block px-2 py-1 rounded-full bg-white/5 border border-white/10 text-xs">PHP 7.2</span>
+                </div>
+                <div className="px-4 py-4 text-gray-300">Interface pour créer des templates et des mailings pour les MB.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
       </section>
     </div>
   );
