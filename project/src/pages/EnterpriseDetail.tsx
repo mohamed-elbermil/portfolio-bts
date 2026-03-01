@@ -265,6 +265,72 @@ git push origin feature/ui-refresh
         </div>
         
       </section>
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <h3 className="text-3xl font-bold mb-6 tracking-tight -tracking-[0.02em]">Correction de bug d’affichage sur Bourse des Voyages</h3>
+          <p className="text-gray-400 mb-8">Exemple concret d’intervention front: correction d’un défaut de mise en page et harmonisation des styles.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="rounded-2xl bg-white/3 border border-white/10 overflow-hidden">
+              <div className="flex items-center justify-between px-4 py-3 bg-white/5">
+                <span className="text-sm font-semibold text-gray-100">Avant</span>
+                <span className="text-xs px-2 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300">Capture</span>
+              </div>
+              <img
+                src="https://via.placeholder.com/800x480?text=Avant+-+Bourse+des+Voyages"
+                alt="Avant correction - Bourse des Voyages"
+                className="w-full h-[300px] object-cover"
+              />
+              <div className="px-4 py-3 text-sm text-gray-300">Mise en page décalée, composants non alignés, contrastes insuffisants.</div>
+            </div>
+            <div className="rounded-2xl bg-white/3 border border-white/10 overflow-hidden">
+              <div className="flex items-center justify-between px-4 py-3 bg-white/5">
+                <span className="text-sm font-semibold text-gray-100">Après</span>
+                <span className="text-xs px-2 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300">Capture</span>
+              </div>
+              <img
+                src="https://via.placeholder.com/800x480?text=Apr%C3%A8s+-+Bourse+des+Voyages"
+                alt="Après correction - Bourse des Voyages"
+                className="w-full h-[300px] object-cover"
+              />
+              <div className="px-4 py-3 text-sm text-gray-300">Répartition de l’espacement + ajout  et personnalisation de la slide-bar & Alignement horizontale des éléments</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <h3 className="text-3xl font-bold mb-6 tracking-tight -tracking-[0.02em]">Création d’un design system modulaire (Figma)</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+            <div className="rounded-2xl bg-white/3 border border-white/10 overflow-hidden">
+              <div className="px-4 py-3 bg-white/5 text-sm font-semibold text-gray-100">Création de variables</div>
+              <img
+                src="https://via.placeholder.com/800x480?text=Figma+-+Variables"
+                alt="Figma - Variables"
+                className="w-full h-[220px] object-cover"
+              />
+              <div className="px-4 py-3 text-sm text-gray-300">Couleurs, espaces, typographies et tokens pour un thème cohérent.</div>
+            </div>
+            <div className="rounded-2xl bg-white/3 border border-white/10 overflow-hidden">
+              <div className="px-4 py-3 bg-white/5 text-sm font-semibold text-gray-100">Création de composants</div>
+              <img
+                src="https://via.placeholder.com/800x480?text=Figma+-+Composants"
+                alt="Figma - Composants"
+                className="w-full h-[220px] object-cover"
+              />
+              <div className="px-4 py-3 text-sm text-gray-300">Buttons, Cards, Carousel, Checkboxes et variants responsives.</div>
+            </div>
+            <div className="rounded-2xl bg-white/3 border border-white/10 p-6">
+              <div className="text-gray-100 font-semibold mb-3">Choses apprises</div>
+              <ul className="space-y-2 text-gray-300 text-sm">
+                <li>Comment fonctionne Figma (pages, frames, assets)</li>
+                <li>Variables et tokens pour la thématisation</li>
+                <li>Composants, variants, auto‑layout</li>
+                <li>Documentation intégrée pour l’équipe</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
