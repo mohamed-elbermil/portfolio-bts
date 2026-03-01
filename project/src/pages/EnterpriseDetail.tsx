@@ -331,6 +331,74 @@ git push origin feature/ui-refresh
           </div>
         </div>
       </section>
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <h3 className="text-3xl font-bold mb-6 tracking-tight -tracking-[0.02em]">Création des visuels pour Play Store “Bourse des vols”</h3>
+          <p className="text-gray-400 mb-8">Production de visuels marketing et captures d’application pour la fiche Play Store.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="rounded-2xl bg-white/3 border border-white/10 overflow-hidden">
+              <img
+                src="https://via.placeholder.com/1000x560?text=Visuel+Play+Store+1"
+                alt="Play Store visuel 1"
+                className="w-full h-[220px] object-cover"
+              />
+              <div className="px-4 py-3 text-sm text-gray-300">Mise en scène multi‑devices, branding et hiérarchie visuelle.</div>
+            </div>
+            <div className="rounded-2xl bg-white/3 border border-white/10 overflow-hidden">
+              <img
+                src="https://via.placeholder.com/1000x560?text=Visuel+Play+Store+2"
+                alt="Play Store visuel 2"
+                className="w-full h-[220px] object-cover"
+              />
+              <div className="px-4 py-3 text-sm text-gray-300">Focus bénéfices: destinations, simplicité, rapport qualité/prix.</div>
+            </div>
+            <div className="rounded-2xl bg-white/3 border border-white/10 overflow-hidden">
+              <img
+                src="https://via.placeholder.com/1000x560?text=Visuel+Play+Store+3"
+                alt="Play Store visuel 3"
+                className="w-full h-[220px] object-cover"
+              />
+              <div className="px-4 py-3 text-sm text-gray-300">Cohérence des layouts, typographies et couleurs de marque.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <h3 className="text-3xl font-bold mb-6 tracking-tight -tracking-[0.02em]">Respect du RGAA</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+            <div className="md:col-span-2 bg-white rounded-2xl overflow-hidden">
+              <img
+                src="https://via.placeholder.com/1200x700?text=Crit%C3%A8res+et+tests+%28RGAA%29"
+                alt="Critères et tests (RGAA)"
+                className="w-full h-[420px] object-cover"
+              />
+            </div>
+            <div className="space-y-6">
+              <div className="rounded-2xl bg-white/3 border border-white/10 p-6">
+                <div className="text-gray-100 font-semibold mb-3">Choses apprises</div>
+                <ul className="space-y-2 text-gray-300 text-sm">
+                  <li>Bonnes pratiques pour rendre les sites accessibles.</li>
+                  <li>Alternatives textuelles et sémantique adaptée.</li>
+                  <li>Focus visibles et navigation clavier.</li>
+                </ul>
+              </div>
+              <div className="rounded-2xl bg-white/3 border border-white/10 p-6">
+                <div className="text-gray-100 font-semibold mb-3">Exemple d’éléments repris</div>
+                <ul className="space-y-2 text-gray-300 text-sm">
+                  <li>Rétablissement du rectangle de focus.</li>
+                  <li>Ajout d’aria-label pour les lecteurs d’écran.</li>
+                  <li>Attribut role sur les éléments clés (ex: banner).</li>
+                  <li>Désactivation des images décoratives via aria-hidden="true".</li>
+                </ul>
+                <div className="mt-4 rounded-xl bg-white text-gray-800 border border-white/10 p-4 text-sm">
+                  Nous sommes 100% français. Notre agence de voyage en ligne est entièrement locale.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
