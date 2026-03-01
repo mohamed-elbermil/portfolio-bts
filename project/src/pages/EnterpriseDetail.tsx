@@ -110,12 +110,19 @@ Guidés par nos passions et nos rêves, nous avons à cœur de rapprocher les pe
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight -tracking-[0.02em]">Les services</h2>
           <p className="text-gray-400 mb-10">Penguin World regroupe plusieurs sociétés :</p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            <img src={PGW} alt="Logo entreprise" className="w-36 h-36 object-contain mb-6" />
-            <img src={PGW} alt="Logo entreprise" className="w-36 h-36 object-contain mb-6" />
-            <img src={PGW} alt="Logo entreprise" className="w-36 h-36 object-contain mb-6" />
-            <img src={PGW} alt="Logo entreprise" className="w-36 h-36 object-contain mb-6" />
-            <img src={PGW} alt="Logo entreprise" className="w-36 h-36 object-contain mb-6" />
-            <img src={PGW} alt="Logo entreprise" className="w-36 h-36 object-contain mb-6" />
+            {[
+              { name: 'Resaneo', url: 'https://media.licdn.com/dms/image/v2/C4D0BAQEK5DcwYdSsFg/company-logo_200_200/company-logo_200_200/0/1630461534022/resaneo_logo?e=2147483647&v=beta&t=UpFz5Z57ZHGu8M2ZcGhkEzki6uTjCYTtp7Hhw6CMSM8' },
+              { name: 'Quartier Libre', url: 'https://media.licdn.com/dms/image/v2/C4E0BAQEX99_bfi3wZA/company-logo_200_200/company-logo_200_200/0/1672758052612/quartier_libre_logo?e=2147483647&v=beta&t=HEuBAB-OOeDURoQE5dXQmGJXjhlgD39lawLS6sHgFFA' },
+              { name: 'Speedmedia', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-rJyvcYMEd3ujswW7IgEpDHdvlA-OtJwVmA&s' },
+              { name: 'Promovols', url: 'https://fr.igraal.com/images/400x/images/p/Promovols_2.jpg' },
+              { name: 'BDV (Bourse des vols)', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrVjlIPIu6QUIkpXt1tTKp7DPqEg0_oTT9kw&s' },
+              { name: 'BDV (Bourse des voyages)', url: 'https://s3-eu-west-1.amazonaws.com/tpd/logos/5fcf60ff13159100018c5b49/0x0.png' },
+            
+            ].map((logo, i) => (
+              <div key={i} className="w-36 h-36 mb-6 bg-white rounded-xl border border-white/10 flex items-center justify-center overflow-hidden">
+                <img src={logo.url} alt={`Logo ${logo.name}`} className="w-full h-full object-contain" />
+              </div>
+            ))}
           </div>
 
 
