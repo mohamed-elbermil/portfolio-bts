@@ -43,6 +43,34 @@ const TechWatch = () => {
       }));
     };
 
+    // Traduit un texte en français en utilisant un service de traduction public.
+    // En cas d'erreur, on renvoie le texte original.
+    const translateToFrench = async (text: string): Promise<string> => {
+      try {
+        const response = await fetch("https://libretranslate.de/translate", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            accept: "application/json",
+          },
+          body: JSON.stringify({
+            q: text,
+            source: "auto",
+            target: "fr",
+            format: "text",
+          }),
+        });
+
+        const data = (await response.json()) as { translatedText?: string };
+        if (data && data.translatedText) {
+          return data.translatedText;
+        }
+      } catch {
+        // Ignore et retourne le texte original
+      }
+      return text;
+    };
+
     // Agrège tous les flux, trie par date et sélectionne les 3 plus récents
     (async () => {
       try {
@@ -97,7 +125,17 @@ const TechWatch = () => {
         const finalNews = filtered.length > 0 ? filtered : allItems;
 
         finalNews.sort((a, b) => b.date.getTime() - a.date.getTime());
-        setNews(finalNews.slice(0, 3));
+        const topThree = finalNews.slice(0, 3);
+
+        // Traduction des titres en français avant affichage
+        const translatedTopThree = await Promise.all(
+          topThree.map(async (item) => ({
+            ...item,
+            title: await translateToFrench(item.title),
+          })),
+        );
+
+        setNews(translatedTopThree);
       } catch {
         setError("Impossible de charger les actualités.");
       } finally {
@@ -123,7 +161,7 @@ const TechWatch = () => {
             <li className="flex items-start">
               <span className="mr-3 text-blue-500">•</span>
               <div>
-                <strong>Curated Content & Tutoriels :</strong> Suivi de
+                <strong>Réseaux sociaux :</strong> Suivi de
                 créateurs de référence
                 <span className="text-blue-600 dark:text-blue-400 font-medium">
                   {" "}
