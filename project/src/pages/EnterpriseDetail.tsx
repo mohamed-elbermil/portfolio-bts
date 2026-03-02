@@ -214,6 +214,26 @@ git push origin feature/ui-refresh
       </section>
       <section className="py-24">
         <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight -tracking-[0.02em]">Missions Vue.js</h2>
+          <p className="text-gray-400 mb-10">Focus sur la logique applicative: composants, état et appels API.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="rounded-2xl bg-white/3 border border-white/10 p-6">
+              <div className="text-lg font-semibold text-gray-100 mb-2">Composants et Props</div>
+              <div className="text-gray-300">Découpage en composants, passage de props typées, slots pour la composition.</div>
+            </div>
+            <div className="rounded-2xl bg-white/3 border border-white/10 p-6">
+              <div className="text-lg font-semibold text-gray-100 mb-2">Gestion d’état (Pinia/Vuex)</div>
+              <div className="text-gray-300">Stores modulaires, mutations/actions pour orchestrer la logique métier.</div>
+            </div>
+            <div className="rounded-2xl bg-white/3 border border-white/10 p-6">
+              <div className="text-lg font-semibold text-gray-100 mb-2">Appels API</div>
+              <div className="text-gray-300">Services centralisés, gestion des erreurs, loaders et caching léger.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-6">
           <h3 className="text-3xl font-bold mb-6 tracking-tight -tracking-[0.02em]">Installation des outils et logiciels</h3>
           <div className="bg-white/3 border border-white/10 rounded-2xl overflow-hidden">
             <div className="hidden md:grid grid-cols-3 bg-white/5 text-gray-100 font-semibold">

@@ -1,10 +1,18 @@
-import React from 'react';
-import { Mail, MapPin, Linkedin, Github } from 'lucide-react';
+import React from "react";
+import { Mail, MapPin, Linkedin, Github } from "lucide-react";
 
 const Footer = () => {
   const socialLinks = [
-    { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/in/mohamed-el-bermil-b957861bb/", label: "LinkedIn" },
-    { icon: <Github className="w-5 h-5" />, href: "https://github.com/mohamed-elbermil?tab=repositories", label: "GitHub" }
+    {
+      icon: <Linkedin className="w-5 h-5" />,
+      href: "https://www.linkedin.com/in/mohamed-el-bermil-b957861bb/",
+      label: "LinkedIn",
+    },
+    {
+      icon: <Github className="w-5 h-5" />,
+      href: "https://github.com/mohamed-elbermil?tab=repositories",
+      label: "GitHub",
+    },
   ];
 
   const quickLinks = [
@@ -12,131 +20,149 @@ const Footer = () => {
     { name: "Veille Tech", href: "#veille" },
     { name: "Compétences", href: "#competences" },
     { name: "CV", href: "#cv" },
-    { name: "Projets", href: "#projets" }
+    { name: "Projets", href: "#projets" },
+    { name: "Tableau de Synthèse", href: "#tableau-synthese" },
   ];
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId.replace('#', ''));
+    const id = sectionId.replace("#", "");
+    if (window.location.hash !== "" && window.location.hash !== "#home") {
+      window.location.hash = id === "presentation" ? "#home" : `#${id}`;
+      return;
+    }
+    const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
     <>
-  <style>
-    {`
+      <style>
+        {`
       footer {
         // bottom: 0;
         // position: absolute;
         width: 100%;
       }
     `}
-  </style>
-    
-    <footer className="text-white">
-      <div className="mx-auto max-w-6xl px-6 py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* Brand Section */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center overflow-hidden">
-                <img 
-                  src="https://media.licdn.com/dms/image/v2/D4D35AQEJ26CEq8e3hg/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1737361151334?e=1750798800&v=beta&t=wQDRvrlCNWwoUFZIF_LS_z82wAiXgZPt_F2S2dT1ij4" 
-                  alt="Mohamed EL BERMIL" 
-                  className="w-full h-full object-cover"
-                />
+      </style>
+
+      <footer className="text-white">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {/* Brand Section */}
+            <div className="lg:col-span-2">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-12 h-12 bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center overflow-hidden">
+                  <img
+                    src="https://media.licdn.com/dms/image/v2/D4D35AQEJ26CEq8e3hg/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1737361151334?e=1750798800&v=beta&t=wQDRvrlCNWwoUFZIF_LS_z82wAiXgZPt_F2S2dT1ij4"
+                    alt="Mohamed EL BERMIL"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-100">
+                    Mohamed EL BERMIL
+                  </h3>
+                  <p className="text-gray-400">Intégrateur Web</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-bold text-gray-100">Mohamed EL BERMIL</h3>
-                <p className="text-gray-400">Intégrateur Web</p>
+
+              <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
+                Passionné par l'innovation technologique, je transforme vos
+                idées en solutions digitales performantes et évolutives qui font
+                la différence.
+              </p>
+
+              {/* Contact Info */}
+              <div className="space-y-3">
+                <div className="flex items-center text-gray-300">
+                  <Mail className="w-5 h-5 mr-3 text-gray-300" />
+                  <a
+                    href="mailto:melbermil@outlook.fr"
+                    className="hover:text-white transition-colors duration-200"
+                  >
+                    melbermil@outlook.fr
+                  </a>
+                </div>
+                <div className="flex items-center text-gray-300">
+                  <MapPin className="w-5 h-5 mr-3 text-gray-300" />
+                  <span>Lyon, France</span>
+                </div>
               </div>
             </div>
-            
-            <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
-              Passionné par l'innovation technologique, je transforme vos idées
-              en solutions digitales performantes et évolutives qui font la différence.
-            </p>
 
-            {/* Contact Info */}
-            <div className="space-y-3">
-              <div className="flex items-center text-gray-300">
-                <Mail className="w-5 h-5 mr-3 text-gray-300" />
-                <a 
-                  href="mailto:melbermil@outlook.fr"
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-xl font-bold mb-6 text-gray-100">
+                Navigation
+              </h4>
+              <ul className="space-y-3">
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <button
+                      onClick={() => scrollToSection(link.href)}
+                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:translate-x-1 transform inline-block"
+                    >
+                      {link.name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Social Links */}
+            <div>
+              <h4 className="text-xl font-bold mb-6 text-gray-100">
+                Réseaux Sociaux
+              </h4>
+              <div className="flex space-x-4 mb-6">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="w-12 h-12 bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-white/30 transition-all duration-200"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Section */}
+          <div className="border-t border-white/10 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <div className="flex space-x-6 text-sm text-gray-400">
+                <a
+                  href="#mentions-legales"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  melbermil@outlook.fr
+                  Mentions légales
                 </a>
-              </div>
-              <div className="flex items-center text-gray-300">
-                <MapPin className="w-5 h-5 mr-3 text-gray-300" />
-                <span>Lyon, France</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-xl font-bold mb-6 text-gray-100">Navigation</h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
-                    className="text-gray-300 hover:text-white transition-colors duration-200 hover:translate-x-1 transform inline-block"
-                  >
-                    {link.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Social Links */}
-          <div>
-            <h4 className="text-xl font-bold mb-6 text-gray-100">Réseaux Sociaux</h4>
-            <div className="flex space-x-4 mb-6">
-              {socialLinks.map((social, index) => (
                 <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="w-12 h-12 bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-white/30 transition-all duration-200"
+                  href="#confidentialite"
+                  className="hover:text-white transition-colors duration-200"
                 >
-                  {social.icon}
+                  Politique de confidentialité
                 </a>
-              ))}
-            </div>
-
-          </div>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="border-t border-white/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            
-            <div className="flex space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-white transition-colors duration-200">
-                Mentions légales
-              </a>
-              <a href="#" className="hover:text-white transition-colors duration-200">
-                Politique de confidentialité
-              </a>
-              <a href="#" className="hover:text-white transition-colors duration-200">
-                Cookies
-              </a>
+                <a
+                  href="#cookies"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  Cookies
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
     </>
   );
 };
-
-
 
 export default Footer;

@@ -21,9 +21,9 @@ const TechWatch = () => {
   useEffect(() => {
     // Sources RSS francophones agrégées
     const feeds: Feed[] = [
-      { url: "https://www.numerama.com/feed/", source: "Numerama" },
-      { url: "https://www.01net.com/feed/", source: "01net" },
-      { url: "https://www.developpez.com/index/rss", source: "Developpez.com" }
+      { url: "https://www.usine-digitale.fr/rss", source: "L'Usine Digitale" },
+      { url: "https://www.zdnet.fr/feeds/rss", source: "ZDNet" },
+      { url: "https://dev.to/feed/latest", source: "Dev.to" }
     ];
 
     // Récupère un flux RSS et le convertit en objets article
@@ -54,10 +54,13 @@ const TechWatch = () => {
           if (r.status === "fulfilled") allItems.push(...r.value);
         });
 
-        // Tri décroissant par date de publication
-        allItems.sort((a, b) => b.date.getTime() - a.date.getTime());
-        // Ne garde que les 3 actualités les plus récentes
-        setNews(allItems.slice(0, 3));
+        const keywords = ['cybersecurity', 'framework', 'web dev', 'devops'];
+        const filtered = allItems.filter(i => {
+          const t = i.title.toLowerCase();
+          return keywords.some(k => t.includes(k));
+        });
+        filtered.sort((a, b) => b.date.getTime() - a.date.getTime());
+        setNews(filtered.slice(0, 3));
       } catch {
         setError("Impossible de charger les actualités.");
       } finally {

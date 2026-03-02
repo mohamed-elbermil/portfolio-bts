@@ -15,6 +15,11 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
+    if (window.location.hash !== '' && window.location.hash !== '#home') {
+      window.location.hash = sectionId === 'presentation' ? '#home' : `#${sectionId}`;
+      setIsMenuOpen(false);
+      return;
+    }
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
