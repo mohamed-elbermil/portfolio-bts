@@ -8,97 +8,67 @@ const BentoGrid = () => {
   const gridRef = useRef<HTMLDivElement>(null);
   const cards = [
     {
-      title: 'PHP',
-      icon: <Code className="w-6 h-6" />,
-      accent: 'from-blue-400/20 to-blue-400/0',
-      border: 'hover:border-blue-400/50',
-      content: (
-        <div className="space-y-3">
-          <div className="font-mono text-sm text-blue-300">Syntaxe, MVC, REST</div>
-          <div className="flex gap-2">
-            <span className="px-2 py-1 text-xs rounded-full bg-blue-500/10 text-blue-300">Laravel</span>
-            <span className="px-2 py-1 text-xs rounded-full bg-blue-500/10 text-blue-300">Routing</span>
-            <span className="px-2 py-1 text-xs rounded-full bg-blue-500/10 text-blue-300">Auth</span>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: 'Java',
-      icon: <Cpu className="w-6 h-6" />,
-      accent: 'from-purple-400/20 to-purple-400/0',
-      border: 'hover:border-purple-400/50',
-      content: (
-        <div className="space-y-3">
-          <div className="font-mono text-sm text-purple-300">POO, Collections, I/O</div>
-          <div className="flex gap-2">
-            <span className="px-2 py-1 text-xs rounded-full bg-purple-500/10 text-purple-300">Spring</span>
-            <span className="px-2 py-1 text-xs rounded-full bg-purple-500/10 text-purple-300">JDBC</span>
-            <span className="px-2 py-1 text-xs rounded-full bg-purple-500/10 text-purple-300">Tests</span>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: 'SQL',
-      icon: <Database className="w-6 h-6" />,
-      accent: 'from-emerald-400/20 to-emerald-400/0',
-      border: 'hover:border-emerald-400/50',
-      content: (
-        <div className="space-y-3">
-          <div className="font-mono text-sm text-emerald-300">DDL, DML, Index</div>
-          <div className="flex gap-2">
-            <span className="px-2 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-300">PostgreSQL</span>
-            <span className="px-2 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-300">Optimisation</span>
-            <span className="px-2 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-300">Transactions</span>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: 'API & Tests',
-      icon: <Settings className="w-6 h-6" />,
-      accent: 'from-cyan-400/20 to-cyan-400/0',
-      border: 'hover:border-cyan-400/50',
-      content: (
-        <div className="space-y-3">
-          <div className="font-mono text-sm text-cyan-300">REST, Auth, CI</div>
-          <div className="flex gap-2">
-            <span className="px-2 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300">Swagger</span>
-            <span className="px-2 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300">Jest</span>
-            <span className="px-2 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300">Postman</span>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: 'Frontend',
+      title: 'Front-end',
       icon: <Layers className="w-6 h-6" />,
       accent: 'from-orange-400/20 to-orange-400/0',
       border: 'hover:border-orange-400/50',
       content: (
         <div className="space-y-3">
-          <div className="font-mono text-sm text-orange-300">React, Tailwind</div>
-          <div className="flex gap-2">
-            <span className="px-2 py-1 text-xs rounded-full bg-orange-500/10 text-orange-300">UX</span>
-            <span className="px-2 py-1 text-xs rounded-full bg-orange-500/10 text-orange-300">UI</span>
-            <span className="px-2 py-1 text-xs rounded-full bg-orange-500/10 text-orange-300">Animations</span>
+          <div className="font-mono text-sm text-orange-300">
+            HTML, CSS, SCSS, JavaScript, TS
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <span className="px-2 py-1 text-xs rounded-full bg-orange-500/10 text-orange-300">HTML</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-orange-500/10 text-orange-300">CSS</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-orange-500/10 text-orange-300">SCSS</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-orange-500/10 text-orange-300">Java Script</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-orange-500/10 text-orange-300">TS</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-orange-500/10 text-orange-300">Wordpress</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-orange-500/10 text-orange-300">React JS</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-orange-500/10 text-orange-300">Vue.js</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-orange-500/10 text-orange-300">Figma</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-orange-500/10 text-orange-300">Tailwind</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-orange-500/10 text-orange-300">Bootstrap</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-orange-500/10 text-orange-300">Astro</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-orange-500/10 text-orange-300">Shadcn</span>
           </div>
         </div>
       ),
     },
     {
-      title: 'Shell & Tools',
-      icon: <Terminal className="w-6 h-6" />,
-      accent: 'from-pink-400/20 to-pink-400/0',
-      border: 'hover:border-pink-400/50',
+      title: 'Back-end & Outils',
+      icon: <Database className="w-6 h-6" />,
+      accent: 'from-emerald-400/20 to-emerald-400/0',
+      border: 'hover:border-emerald-400/50',
       content: (
         <div className="space-y-3">
-          <div className="font-mono text-sm text-pink-300">Git, CLI</div>
-          <div className="flex gap-2">
-            <span className="px-2 py-1 text-xs rounded-full bg-pink-500/10 text-pink-300">GitHub</span>
-            <span className="px-2 py-1 text-xs rounded-full bg-pink-500/10 text-pink-300">CI</span>
-            <span className="px-2 py-1 text-xs rounded-full bg-pink-500/10 text-pink-300">Deploy</span>
+          <div className="font-mono text-sm text-emerald-300">
+            Node.js, SQL, Python (Django), Docker, Mongo DB
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <span className="px-2 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-300">Node.js</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-300">SQL</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-300">Python (lié à Django)</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-300">Docker</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-300">Mongo DB</span>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: 'Méthodologies / Organisation',
+      icon: <Settings className="w-6 h-6" />,
+      accent: 'from-cyan-400/20 to-cyan-400/0',
+      border: 'hover:border-cyan-400/50',
+      content: (
+        <div className="space-y-3">
+          <div className="font-mono text-sm text-cyan-300">
+            Méthodes de travail et collaboration
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <span className="px-2 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300">Agile (scrum)</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300">Github</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300">Gitlab</span>
           </div>
         </div>
       ),
