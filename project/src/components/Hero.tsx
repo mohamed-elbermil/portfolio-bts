@@ -109,7 +109,7 @@ const Hero = () => {
                       Formation
                     </h4>
                     <p className="text-gray-300 leading-relaxed">
-                      Étudiant en première année de BTS SIO, je me spécialise
+                      Étudiant en deuxième année de BTS SIO (SLAM), je me spécialise
                       dans le développement web et les nouvelles technologies.
                     </p>
                   </div>
