@@ -145,6 +145,19 @@ const CV = () => {
             <Download className="w-5 h-5 mr-2" />
             Télécharger le CV
           </button>
+
+          <div className="mt-10 max-w-3xl mx-auto">
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/30 shadow-lg">
+              <iframe
+                src={cvPdf}
+                title="Aperçu du CV"
+                className="w-full h-[480px]"
+              />
+            </div>
+            <p className="mt-3 text-sm text-gray-500">
+              Aperçu du CV affiché ci-dessus. Pour une meilleure lisibilité ou impression, utilisez le bouton &quot;Télécharger le CV&quot;.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
