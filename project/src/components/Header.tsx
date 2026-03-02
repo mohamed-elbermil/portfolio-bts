@@ -78,7 +78,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white/8 backdrop-blur-xl border-t border-white/10">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-black/80 backdrop-blur-x2 border-t border-white/10">
             <div className="py-4">
               {menuItems.map((item) => (
                 <button

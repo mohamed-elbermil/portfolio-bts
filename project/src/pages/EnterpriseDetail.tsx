@@ -40,13 +40,16 @@ const techIcons = [
   { name: "SCSS", url: "https://cdn.simpleicons.org/sass/CC6699" },
   { name: "Chocolatey", url: "https://cdn.simpleicons.org/chocolatey/80B5E3" },
   { name: "NodeJS", url: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
-  { name: "XML", url: "https://cdn.simpleicons.org/w3c/005A9C" },
+  {
+    name: "XML",
+    url: "https://www.w3.org/Icons/XML/xml.svg",
+  },
 ];
 
 const toolIcons = [
   {
     name: "Visual Studio Code",
-    url: "https://cdn.simpleicons.org/visualstudiocode/007ACC",
+    url: "https://cdn.jsdelivr.net/gh/callback-io/allogo@main/public/logos/vscode/icon.png",
   },
   { name: "GitLab", url: "https://cdn.simpleicons.org/gitlab/FC6D26" },
   { name: "Discord", url: "https://cdn.simpleicons.org/discord/5865F2" },
@@ -54,10 +57,19 @@ const toolIcons = [
     name: "Thunderbird",
     url: "https://cdn.simpleicons.org/thunderbird/0A84FF",
   },
-  { name: "Pidgin", url: "https://cdn.simpleicons.org/pidgin/802372" },
+  {
+    name: "Pidgin",
+    url: "https://www.pidgin.im/images/pidgin-circle-96.png",
+  },
   { name: "Jitsi", url: "https://cdn.simpleicons.org/jitsi/009FCC" },
-  { name: "Planio", url: undefined },
-  { name: "Whaller", url: undefined },
+  {
+    name: "Planio",
+    url: "https://plan.io/assets/logos/logo-blue-1b8c677657f1c1ff717a8ba4a8988e85c508e4b0f4a25fc9afb0db1f2fd51edb.svg",
+  },
+  {
+    name: "Whaller",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Whaller_logo_simple.png/240px-Whaller_logo_simple.png",
+  },
 ];
 
 const EnterpriseDetail = () => {
