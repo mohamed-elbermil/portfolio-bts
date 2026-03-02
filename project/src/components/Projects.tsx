@@ -78,12 +78,11 @@ const Projects = () => {
         "Application de gestion des frais pour les visiteurs médicaux de l'entreprise Galaxy Swiss Bourdin.",
       image:
         "https://img.freepik.com/vecteurs-premium/logo-gsb-est-lettre-gsb-initiale-gsb-liee-cercle-monogramme-majuscules-typographie-gsb-pour-entreprises-technologiques-marque-immobiliere_229120-76919.jpg",
-      technologies: ["PHP", "MySQL", "MVC"],
+      technologies: ["C#", "MySQL", "MVC"],
       competences: [
         "Bloc 2 : Gérer le patrimoine informatique",
         "Bloc SLAM : Développer, adapter ou maintenir des solutions applicatives",
         "Bloc 3 : Concevoir et développer une solution applicative",
-        "Bloc 4 : Organiser son développement et sa veille",
       ],
       features: [
         "Authentification sécurisée",
