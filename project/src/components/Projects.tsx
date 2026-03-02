@@ -90,7 +90,6 @@ const Projects = () => {
         "Saisie de fiches de frais",
         "Validation par les comptables",
       ],
-      stats: { users: "50+", rating: 4.5 },
       links: {
         github: "https://github.com/mohamed-elbermil/GSB2_project",
       },
@@ -255,16 +254,6 @@ const Projects = () => {
                   </div>
 
                   {/* Stats */}
-                  <div className="flex items-center justify-between mb-4 text-sm text-gray-300">
-                    <div className="flex items-center">
-                      <Users className="w-4 h-4 mr-1" />
-                      <span>{project.stats.users} utilisateurs</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Star className="w-4 h-4 mr-1 text-yellow-400" />
-                      <span>{project.stats.rating}/5</span>
-                    </div>
-                  </div>
 
                   {/* Links */}
                   <div className="flex space-x-3">

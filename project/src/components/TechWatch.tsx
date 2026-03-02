@@ -34,8 +34,8 @@ const TechWatch = () => {
       const data = await res.json();
       if (!data || !data.items) throw new Error("Invalid feed");
 
-      // Ne conserve que les 5 derniers éléments et normalise les champs
-      return data.items.slice(0, 5).map((item: Rss2JsonItem) => ({
+      // Récupère plus d'éléments pour augmenter les chances de match
+      return data.items.slice(0, 10).map((item: Rss2JsonItem) => ({
         title: item.title,
         link: item.link,
         date: new Date(item.pubDate),
@@ -54,13 +54,25 @@ const TechWatch = () => {
           if (r.status === "fulfilled") allItems.push(...r.value);
         });
 
-        const keywords = ['cybersecurity', 'framework', 'web dev', 'devops'];
+        // Mots-clés élargis pour la veille BTS SIO
+        const keywords = [
+          'cybersecurity', 'sécurité', 'cybersécurité', 'hack', 'faille',
+          'framework', 'react', 'vue', 'angular', 'nextjs', 'svelte',
+          'web dev', 'frontend', 'backend', 'fullstack', 'javascript', 'typescript', 'php',
+          'devops', 'docker', 'kubernetes', 'cloud', 'aws', 'azure', 'cicd',
+          'ia', 'intelligence artificielle', 'ai', 'data', 'api'
+        ];
+        
         const filtered = allItems.filter(i => {
           const t = i.title.toLowerCase();
           return keywords.some(k => t.includes(k));
         });
-        filtered.sort((a, b) => b.date.getTime() - a.date.getTime());
-        setNews(filtered.slice(0, 3));
+
+        // Si aucun match n'est trouvé avec les filtres, on prend les plus récents par défaut
+        const finalNews = filtered.length > 0 ? filtered : allItems;
+        
+        finalNews.sort((a, b) => b.date.getTime() - a.date.getTime());
+        setNews(finalNews.slice(0, 3));
       } catch {
         setError("Impossible de charger les actualités.");
       } finally {
