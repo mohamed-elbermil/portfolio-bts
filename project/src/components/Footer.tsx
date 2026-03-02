@@ -56,7 +56,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center overflow-hidden">
                   <img
-                    src="https://media.licdn.com/dms/image/v2/D4D35AQEJ26CEq8e3hg/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1737361151334?e=1750798800&v=beta&t=wQDRvrlCNWwoUFZIF_LS_z82wAiXgZPt_F2S2dT1ij4"
+                    src="https://media.licdn.com/dms/image/v2/D4D35AQFbnrJGGxOakA/profile-framedphoto-shrink_400_400/B4DZpo2tWdIMAc-/0/1762695763648?e=1773057600&v=beta&t=AMhtNdqQ23c2bFchLLEAOuxJiMD119QUilHMfkzihZU"
                     alt="Mohamed EL BERMIL"
                     className="w-full h-full object-cover"
                   />
