@@ -48,6 +48,11 @@
   animation: bounce-slow 2s ease-in-out infinite;
 }
 
+.presentation-button {
+  top: 5em;
+  left: 10px;
+}
+
 section {
   background-color: #050505;
 }

@@ -286,10 +286,10 @@ const CompanyExperience = () => {
           </div>
         </Reveal>
       </div>
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6 text-center mt-8">
         <a
           href="#entreprises-detail"
-          className="inline-flex items-center px-6 py-3 bg-white/5 text-white font-semibold rounded-2xl border border-white/10 hover:border-white/30 transition-all"
+          className="mt-9 inline-flex items-center px-6 py-3 bg-white/5 text-white font-semibold rounded-2xl border border-white/10 hover:border-white/30 transition-all"
         >
           En savoir +
         </a>

@@ -115,7 +115,7 @@ const EnterpriseDetail = () => {
     <div ref={sectionRef} className="min-h-screen bg-[#050505] text-gray-100">
       <a
         href="#presentation"
-        className="fixed top-6 left-6 z-50 inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-2xl hover:border-white/30 transition-colors"
+        className="fixed top-6 left-6 z-50 inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-2xl hover:border-white/30 transition-colors presentation-button"
       >
         <ArrowLeft className="w-4 h-4" />
         Retour au Portfolio
