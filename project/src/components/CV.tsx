@@ -133,9 +133,7 @@ const CV = () => {
           <h2 className="overflow-hidden text-5xl md:text-6xl font-bold text-gray-100 mb-6 tracking-tight -tracking-[0.02em]">
             <span className="cv-title-inner inline-block translate-y-full">Parcours Professionnel</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed mb-8">
-            Une trajectoire dédiée à l'excellence technique et à l'innovation constante
-            dans l'écosystème du développement moderne.
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed mb-8">Découvrez mon parcours et mes compétences en un coup d’œil.
           </p>
           
           <button 

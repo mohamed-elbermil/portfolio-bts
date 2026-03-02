@@ -108,7 +108,7 @@ const BentoGrid = () => {
     <section id="competences" className="py-24">
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-12">
-          <h2 className="text-5xl md:text-6xl font-bold tracking-tight -tracking-[0.02em]">Compétences en Bento Grid</h2>
+          <h2 className="text-5xl md:text-6xl font-bold tracking-tight -tracking-[0.02em]">Compétences</h2>
           <p className="mt-4 text-gray-400 max-w-2xl">Présentation minimaliste et immersive, avec micro-interactions premium.</p>
         </div>
         <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
