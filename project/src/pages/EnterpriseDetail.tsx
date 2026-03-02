@@ -4,6 +4,10 @@ import beforeBDV from "../assets/images/before-bdv.png";
 import afterBDV from "../assets/images/after-bdv.png";
 import componentFigma from "../assets/images/component-figma.png";
 import variableFigma from "../assets/images/variable-figma.png";
+import bdvStore1 from "../assets/images/bdv-store-1.png";
+import bdvStore2 from "../assets/images/bdv-store-2.png";
+import bdvStore3 from "../assets/images/bdv-store-3.png";
+import rgaa from "../assets/images/critere-rgaa.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
@@ -624,7 +628,7 @@ git push origin feature/ui-refresh
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="rounded-2xl bg-white/3 border border-white/10 overflow-hidden">
               <img
-                src="https://via.placeholder.com/1000x560?text=Visuel+Play+Store+1"
+                src={bdvStore1}
                 alt="Play Store visuel 1"
                 className="w-full h-[220px] object-cover"
               />
@@ -634,7 +638,7 @@ git push origin feature/ui-refresh
             </div>
             <div className="rounded-2xl bg-white/3 border border-white/10 overflow-hidden">
               <img
-                src="https://via.placeholder.com/1000x560?text=Visuel+Play+Store+2"
+                src={bdvStore2}
                 alt="Play Store visuel 2"
                 className="w-full h-[220px] object-cover"
               />
@@ -644,7 +648,7 @@ git push origin feature/ui-refresh
             </div>
             <div className="rounded-2xl bg-white/3 border border-white/10 overflow-hidden">
               <img
-                src="https://via.placeholder.com/1000x560?text=Visuel+Play+Store+3"
+                src={bdvStore3}
                 alt="Play Store visuel 3"
                 className="w-full h-[220px] object-cover"
               />
@@ -663,7 +667,7 @@ git push origin feature/ui-refresh
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
             <div className="md:col-span-2 bg-white rounded-2xl overflow-hidden">
               <img
-                src="https://via.placeholder.com/1200x700?text=Crit%C3%A8res+et+tests+%28RGAA%29"
+                src={rgaa}
                 alt="Critères et tests (RGAA)"
                 className="w-full h-[420px] object-cover"
               />
