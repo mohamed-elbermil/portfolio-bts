@@ -3,6 +3,7 @@ import CompanyExperience from "./components/CompanyExperiences";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import TechWatch from "./components/TechWatch";
+import SkillsTable from "./components/SkillsTable";
 import CV from "./components/CV";
 import Footer from "./components/Footer";
 import TechWatchArchive from "./pages/TechWatchArchive";
@@ -92,6 +93,7 @@ function App() {
       <CompanyExperience />
       <Projects />
       <TechWatch />
+      <SkillsTable />
       <Footer />
     </div>
   );

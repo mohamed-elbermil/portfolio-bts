@@ -30,6 +30,7 @@ const Header = () => {
   const menuItems = [
     { id: 'presentation', label: 'Présentation' },
     { id: 'veille', label: 'Veille Tech' },
+    { id: 'tableau-competences', label: 'Tableau des compétences' },
     { id: 'competences', label: 'Compétences' },
     { id: 'cv', label: 'CV' },
     { id: 'projets', label: 'Projets' }

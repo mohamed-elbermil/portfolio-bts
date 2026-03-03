@@ -21,6 +21,7 @@ const Footer = () => {
     { name: "Compétences", href: "#competences" },
     { name: "CV", href: "#cv" },
     { name: "Projets", href: "#projets" },
+    { name: "Tableau des compétences", href: "#tableau-competences" },
     { name: "Tableau de Synthèse", href: "#tableau-synthese" },
   ];
 
