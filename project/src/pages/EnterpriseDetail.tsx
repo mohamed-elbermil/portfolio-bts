@@ -669,6 +669,9 @@ git push origin feature/ui-refresh
               </div>
             </div>
           </div>
+          <div className="btn-google-play">
+            <a href="https://play.google.com/store/search?q=bourse%20des%20vols&c=apps&utm_source=emea_Med" target="blank">Voir la fiche google play</a>
+          </div>
         </div>
       </section>
       <section className="py-24">
