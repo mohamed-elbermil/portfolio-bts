@@ -73,7 +73,7 @@ const Projects = () => {
       },
     },
     {
-      title: "GSB",
+      title: "GSB - Winform",
       description:
         "Application de gestion des frais pour les visiteurs médicaux de l'entreprise Galaxy Swiss Bourdin.",
       image:
@@ -91,6 +91,31 @@ const Projects = () => {
       ],
       links: {
         github: "https://github.com/mohamed-elbermil/GSB2_project",
+      },
+    },
+    {
+      title: "GSB - Web",
+      description:
+        "GSB est une solution web full-stack conçue pour optimiser la gestion des collaborateurs. Elle centralise la planification des rendez-vous, le suivi des factures et la gestion des rappels au sein d'une interface intuitive et sécurisée.",
+      image:
+        "https://img.freepik.com/vecteurs-premium/logo-gsb-est-lettre-gsb-initiale-gsb-liee-cercle-monogramme-majuscules-typographie-gsb-pour-entreprises-technologiques-marque-immobiliere_229120-76919.jpg",
+      technologies: ["React", "Node.js", "MongoDB", "Express", "JWT"],
+      competences: [
+        "Bloc 2 : Conception et développement d'une interface utilisateur",
+        "Bloc SLAM : Développer des composants front-end réutilisables",
+        "Bloc 3 : Intégration de services et déploiement",
+        "Bloc 4 : Gestion de projet et versionning avec Git",
+        "Bloc 3 : Concevoir et développer une solution applicative",
+      ],
+      features: [
+        "Système d'authentification JWT sécurisé",
+        "Gestion des rendez-vous et factures",
+        "Système de rappels automatiques",
+        "Interface responsive et moderne",
+        "API REST complète",
+      ],
+      links: {
+        github: "https://github.com/mohamed-elbermil/GSB_web",
       },
     },
   ];

@@ -37,7 +37,7 @@ const projects: ProjectRow[] = [
     covered: ['C2.1', 'C2.2', 'C2.5']
   },
   {
-    name: 'GSB',
+    name: 'GSB - Winform',
     links: { github: 'https://github.com/mohamed-elbermil/GSB2_project' },
     covered: ['C2.2', 'C2.3', 'C2.4', 'C2.5']
   }
