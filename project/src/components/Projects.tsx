@@ -116,6 +116,7 @@ const Projects = () => {
       ],
       links: {
         github: "https://github.com/mohamed-elbermil/GSB_web",
+        Site: "https://gsb-web-1.onrender.com/",
       },
     },
   ];
