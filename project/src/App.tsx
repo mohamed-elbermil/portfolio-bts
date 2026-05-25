@@ -8,6 +8,7 @@ import CV from "./components/CV";
 import Footer from "./components/Footer";
 import TechWatchArchive from "./pages/TechWatchArchive";
 import BentoGrid from "./components/BentoGrid";
+import Marquee from "./components/Marquee";
 import Projects from "./components/Projects";
 import EnterpriseDetail from "./pages/EnterpriseDetail";
 import SynthesisTable from "./pages/SynthesisTable";
@@ -88,6 +89,7 @@ function App() {
     <div className="min-h-screen bg-[#050505] text-gray-100">
       <Header />
       <Hero />
+      <Marquee />
       <BentoGrid />
       <CV />
       <CompanyExperience />

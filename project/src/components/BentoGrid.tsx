@@ -73,6 +73,26 @@ const BentoGrid = () => {
         </div>
       ),
     },
+    {
+      title: 'IA & Outils',
+      icon: <Cpu className="w-6 h-6" />,
+      accent: 'from-violet-400/20 to-violet-400/0',
+      border: 'hover:border-violet-400/50',
+      content: (
+        <div className="space-y-3">
+          <div className="font-mono text-sm text-violet-300">
+            Automatisation et environnement dev
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <span className="px-2 py-1 text-xs rounded-full bg-violet-500/10 text-violet-300">n8n</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-violet-500/10 text-violet-300">Claude Code</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-violet-500/10 text-violet-300">Cursor</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-violet-500/10 text-violet-300">VS Code</span>
+            <span className="px-2 py-1 text-xs rounded-full bg-violet-500/10 text-violet-300">Linux</span>
+          </div>
+        </div>
+      ),
+    },
   ];
 
   useEffect(() => {
@@ -109,7 +129,7 @@ const BentoGrid = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-12">
           <h2 className="text-5xl md:text-6xl font-bold tracking-tight -tracking-[0.02em]">Compétences</h2>
-          <p className="mt-4 text-gray-400 max-w-2xl">Présentation minimaliste et immersive, avec micro-interactions premium.</p>
+          <p className="mt-4 text-gray-400 max-w-2xl">Maîtrise des outils du développement web moderne, du front-end au back-end.</p>
         </div>
         <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card, i) => (
