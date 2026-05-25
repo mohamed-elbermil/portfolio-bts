@@ -13,31 +13,51 @@ const SkillsTable = () => {
   const realisationsAnnee1 = [
     {
       patrimoine: [
-        "Personnalisation d'un template email (variables dynamiques)",
-        "Exploitation des standards d'envoi email (RFC)",
-        "Déploiement des visuels et validation technique",
-        "Respect des normes et standards adoptés",
+        "Versioning systématique du code source avec Git/GitLab (traçabilité des ressources)",
+        "Gestion des accès et habilitations via Syspass (gestionnaire de mots de passe d'entreprise)",
+        "Suivi des tâches et incidents clients sur Planio (outil de ticketing interne)",
+        "Personnalisation d'un template email (variables dynamiques, standards RFC)",
+        "Respect des normes et standards web adoptés par le prestataire",
       ],
       presence: [
-        "Traitement des demandes de personnalisation",
+        "Intégration front-end de sites marque blanche pour clients Lidl et Veepee",
+        "Audit et corrections RGAA sur les sites clients",
         "Planification des campagnes email",
         "Veille sur les guidelines des stores (Play Store)",
-        "Corrections issues des audits accessibilité",
+        "Référencement de l'app « Bourse des Vols » sur Google Play",
       ],
-      projet: ["Suivi du respect du cadre juridique"],
-      devPro: ["Veille réglementaire sur le RGAA"],
+      projet: [
+        "Suivi d'avancement via Planio (organisation par tâches, délais)",
+        "Merge requests GitLab par branche fonctionnelle",
+        "Suivi du respect du cadre juridique",
+      ],
+      devPro: [
+        "Veille réglementaire sur le RGAA",
+        "Apprentissage du design system Figma en contexte professionnel",
+      ],
     },
   ];
 
   const realisationsAnnee2 = [
     {
-      patrimoine: ["Déploiement du site sur un hébergement professionnel"],
-      presence: [
-        "Veille sur les outils de référencement local",
-        "Pratiques UX pour artisans",
+      patrimoine: [
+        "Déploiement du site artisan sur hébergement professionnel",
+        "Formation du client à la prise en main du back-office WordPress",
       ],
-      projet: [],
-      devPro: [],
+      presence: [
+        "Création du site artisan plombier (WordPress, responsive)",
+        "Référencement local : Google My Business, SEO local",
+        "Pages services et zones d'intervention adaptées au contexte local",
+        "Analyse des objectifs de prise de contact en ligne",
+      ],
+      projet: [
+        "Recueil du besoin client, maquette Figma, intégration, déploiement",
+        "Planification des étapes et respect des délais convenus",
+      ],
+      devPro: [
+        "Veille sur les outils de référencement local",
+        "Montée en compétences sur Next.js (projet Moovy)",
+      ],
     },
   ];
 
@@ -85,14 +105,15 @@ const SkillsTable = () => {
       ],
     },
     {
-      titre: "Création du site web et optimisation du référencement local pour un artisan plombier",
+      titre: "Présence en ligne de bout en bout pour un artisan plombier",
       items: [
-        "Traitement des demandes du client sur les fonctionnalités souhaitées",
-        "Valorisation de l'image via un site moderne et responsive",
-        "Référencement local (Google My Business, SEO local)",
-        "Création de contenu adapté (pages de services, zone d'intervention)",
-        "Analyse des objectifs (augmenter les prises de contact en ligne)",
-        "Planification des étapes (maquette, intégration, déploiement)",
+        "Recueil du besoin client : analyse des objectifs (augmenter les prises de contact en ligne)",
+        "Maquette sur Figma, validation avec le client avant intégration",
+        "Création du site WordPress responsive (pages services, zones d'intervention)",
+        "Référencement local : Google My Business, SEO local (mots-clés géolocalisés)",
+        "Déploiement sur hébergement professionnel et vérification de l'accessibilité publique",
+        "Formation du client à l'interface d'administration WordPress et documentation des procédures de base",
+        "Accompagnement post-livraison : explication de la mise à jour du contenu",
       ],
     },
   ];
@@ -176,21 +197,26 @@ const SkillsTable = () => {
             </div>
             <div>
               <h4 className="text-gray-200 font-semibold mb-2">Seconde année</h4>
-              <div className="rounded-xl border border-white/10 bg-white/3 p-4">
-                <ul className="space-y-1 text-sm text-gray-300">
-                  {realisationsAnnee2[0].patrimoine.map((item, j) => (
-                    <li key={j} className="flex gap-1">
-                      <span className="text-blue-500">▸</span>
-                      {item}
-                    </li>
-                  ))}
-                  {realisationsAnnee2[0].presence.map((item, j) => (
-                    <li key={j} className="flex gap-1">
-                      <span className="text-blue-500">▸</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+              <div className="rounded-xl border border-white/10 bg-white/3 overflow-hidden">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                  {(["patrimoine", "presence", "projet", "devPro"] as const).map(
+                    (key, i) => (
+                      <div key={key} className="p-4">
+                        <div className="text-xs font-semibold text-blue-400 mb-2 uppercase tracking-wide">
+                          {axes[i]}
+                        </div>
+                        <ul className="space-y-1 text-sm text-gray-300">
+                          {realisationsAnnee2[0][key].map((item, j) => (
+                            <li key={j} className="flex gap-1">
+                              <span className="text-blue-500">▸</span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )
+                  )}
+                </div>
               </div>
             </div>
           </div>

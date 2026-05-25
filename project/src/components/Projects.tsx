@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
-import moovyImg from "../assets/images/moovy.png";
 import fitnessAreaImg from "../assets/images/fitness-area.png";
 import vintedImg from "../assets/images/vinted.png";
+import shuutifyImg from "../assets/images/shuutify.png";
 import { ExternalLink, Github, Users, Star } from "lucide-react";
 import Reveal from "./Reveal";
 import { gsap } from "gsap";
@@ -18,10 +18,9 @@ const Projects = () => {
       image: fitnessAreaImg,
       technologies: ["React", "CSS"],
       competences: [
-        "Bloc 2 : Conception et développement d'une interface utilisateur",
-        "Bloc SLAM : Développer des composants front-end réutilisables",
-        "Bloc 4 : Gestion de projet et versionning avec Git",
-        "Bloc 3 : Intégration de services et déploiement (Vercel)",
+        "Interface utilisateur",
+        "Composants front-end",
+        "Git & déploiement Vercel",
       ],
       features: [
         "Consultation des formules",
@@ -35,21 +34,25 @@ const Projects = () => {
       },
     },
     {
-      title: "Moovy",
+      title: "Shuutify",
       description:
-        "Moovy est une plateforme de streaming fictive qui permet de découvrir et regarder vos films et séries préférés. La plateforme utilise l’API TMDB.",
-      image: moovyImg,
-      technologies: ["React", "NextJS", "CSS", "JS"],
+        "Application React pour lutter contre les incivilités au cinéma. Les spectateurs peuvent signaler en temps réel les comportements perturbateurs en salle (bruit, téléphone allumé, etc.) afin d’améliorer l’expérience de tous.",
+      image: shuutifyImg,
+      technologies: ["React", "CSS", "JS"],
       competences: [
-        "Bloc 2 : Définir et implémenter des fonctionnalités utilisateurs",
-        "Bloc SLAM : Consommer et structurer des données côté client",
-        "Bloc 3 : Modéliser et interroger une base de données SQL",
-        "Bloc 4 : Collaboration, documentation et qualité du code",
+        "Interface utilisateur",
+        "Composants front-end",
+        "Git & mise en ligne",
       ],
-      features: ["Catalogue de films dynamique", "Interface responsive"],
-      stats: { users: "1000+", rating: 4.9 },
+      features: [
+        "Signalement d’incivilités en salle en temps réel",
+        "Interface utilisateur intuitive et responsive",
+        "Catégorisation des types de comportements",
+      ],
+      stats: { users: "500+", rating: 4.7 },
       links: {
-        github: "https://github.com/mohamed-elbermil/moovy",
+        Site: "https://www.shuutify.com/",
+        github: "https://github.com/mohamed-elbermil/shuutify",
       },
     },
     {
@@ -59,8 +62,8 @@ const Projects = () => {
       image: vintedImg,
       technologies: ["VueJS", "CSS", "JS"],
       competences: [
-        "Bloc 2 : Conception et développement d'une interface utilisateur",
-        "Bloc 4 : Gestion de projet et versionning avec Git",
+        "Interface utilisateur",
+        "Git & versionning",
       ],
       features: [
         "Génération de descriptions personnalisées",
@@ -80,9 +83,8 @@ const Projects = () => {
         "https://img.freepik.com/vecteurs-premium/logo-gsb-est-lettre-gsb-initiale-gsb-liee-cercle-monogramme-majuscules-typographie-gsb-pour-entreprises-technologiques-marque-immobiliere_229120-76919.jpg",
       technologies: ["C#", "MySQL", "MVC"],
       competences: [
-        "Bloc 2 : Gérer le patrimoine informatique",
-        "Bloc SLAM : Développer, adapter ou maintenir des solutions applicatives",
-        "Bloc 3 : Concevoir et développer une solution applicative",
+        "Patrimoine informatique",
+        "Solution applicative (C# MVC)",
       ],
       features: [
         "Authentification sécurisée",
@@ -96,26 +98,47 @@ const Projects = () => {
     {
       title: "GSB - Web",
       description:
-        "GSB est une solution web full-stack conçue pour optimiser la gestion des collaborateurs. Elle centralise la planification des rendez-vous, le suivi des factures et la gestion des rappels au sein d'une interface intuitive et sécurisée.",
+        "Solution full-stack de gestion des collaborateurs. Front-end React + API REST Node.js/Express. JWT choisi pour son caractère stateless, MongoDB pour sa flexibilité de schéma.",
       image:
         "https://img.freepik.com/vecteurs-premium/logo-gsb-est-lettre-gsb-initiale-gsb-liee-cercle-monogramme-majuscules-typographie-gsb-pour-entreprises-technologiques-marque-immobiliere_229120-76919.jpg",
       technologies: ["React", "Node.js", "MongoDB", "Express", "JWT"],
       competences: [
-        "Bloc 2 : Conception et développement d'une interface utilisateur",
-        "Bloc SLAM : Développer des composants front-end réutilisables",
-        "Bloc 3 : Intégration de services et déploiement",
-        "Bloc 4 : Gestion de projet et versionning avec Git",
-        "Bloc 3 : Concevoir et développer une solution applicative",
+        "Interface utilisateur",
+        "API REST & authentification JWT",
+        "Solution applicative full-stack",
       ],
       features: [
-        "Système d'authentification JWT sécurisé",
+        "Authentification JWT (stateless, adapté REST)",
         "Gestion des rendez-vous et factures",
         "Système de rappels automatiques",
-        "Interface responsive et moderne",
         "API REST complète",
+        "Branches Git par fonctionnalité",
       ],
       links: {
         github: "https://github.com/mohamed-elbermil/GSB_web",
+      },
+    },
+    {
+      title: "Site Artisan Plombier",
+      description:
+        "Gestion complète de la présence en ligne d'un artisan plombier : analyse du besoin client, maquette Figma, création du site WordPress, SEO local, fiche Google My Business et formation à la prise en main du back-office.",
+      image:
+        "https://img.freepik.com/photos-gratuite/plombier-reparant-evier-cuisine_23-2149374819.jpg",
+      technologies: ["WordPress", "SEO", "Google My Business", "Figma"],
+      competences: [
+        "Présence en ligne",
+        "Mode projet de A à Z",
+        "Mise à disposition & formation",
+      ],
+      features: [
+        "Création du site responsive sous WordPress",
+        "SEO local : pages services et zones d'intervention",
+        "Fiche Google My Business optimisée",
+        "Formation client à l'interface d'administration",
+        "Analyse des objectifs (augmenter les prises de contact)",
+      ],
+      links: {
+        github: "https://github.com/mohamed-elbermil",
       },
     },
   ];
@@ -261,21 +284,28 @@ const Projects = () => {
                     </ul>
                   </div>
 
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-gray-100 mb-2">
-                      Compétences mobilisées :
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.competences?.map((comp, idx) => (
-                        <span
-                          key={idx}
-                          className="px-2.5 py-1 bg-white/5 text-gray-200 text-xs font-medium rounded-full border border-white/10"
-                        >
-                          {comp}
-                        </span>
-                      ))}
+                  {project.competences && project.competences.length > 0 && (
+                    <div className="mb-4">
+                      <h4 className="text-sm font-semibold text-gray-100 mb-2">
+                        Compétences mobilisées :
+                      </h4>
+                      <div className="flex flex-wrap gap-1.5">
+                        {project.competences.slice(0, 2).map((comp, idx) => (
+                          <span
+                            key={idx}
+                            className="px-2 py-0.5 bg-white/5 text-gray-400 text-xs rounded-md border border-white/10 leading-snug"
+                          >
+                            {comp}
+                          </span>
+                        ))}
+                        {project.competences.length > 2 && (
+                          <span className="px-2 py-0.5 text-gray-500 text-xs">
+                            +{project.competences.length - 2} autres
+                          </span>
+                        )}
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   {/* Stats */}
 
